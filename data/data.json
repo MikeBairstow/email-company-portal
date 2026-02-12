@@ -1,0 +1,349 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "email": "demo@agency.com",
+      "password": "$2a$10$iJGExfMpskKhubrGlvi.4.NxXi356ss2gYCcgR43T4WJKH9vbrTyO",
+      "companyName": "Demo Agency",
+      "logoUrl": null,
+      "createdAt": "2026-02-12T07:12:04.360Z",
+      "lastLogin": null
+    }
+  ],
+  "campaigns": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "name": "SaaS Outreach - Q1",
+      "status": "active",
+      "inboxes": 3,
+      "dailySends": 450,
+      "dailyLimit": 500,
+      "openRate": 42.5,
+      "replyRate": 12.8
+    },
+    {
+      "id": 2,
+      "clientId": 1,
+      "name": "Product Launch - Beta",
+      "status": "paused",
+      "inboxes": 1,
+      "dailySends": 0,
+      "dailyLimit": 200,
+      "openRate": 35.1,
+      "replyRate": 8.4
+    },
+    {
+      "id": 3,
+      "clientId": 1,
+      "name": "Follow-up Sequence",
+      "status": "active",
+      "inboxes": 2,
+      "dailySends": 150,
+      "dailyLimit": 250,
+      "openRate": 55.9,
+      "replyRate": 18.2
+    },
+    {
+      "id": 4,
+      "clientId": 1,
+      "name": "Lost Leads Re-engagement",
+      "status": "active",
+      "inboxes": 1,
+      "dailySends": 75,
+      "dailyLimit": 100,
+      "openRate": 28.3,
+      "replyRate": 4.5
+    },
+    {
+      "id": 5,
+      "clientId": 1,
+      "name": "Event Invitation",
+      "status": "paused",
+      "inboxes": 1,
+      "dailySends": 0,
+      "dailyLimit": 300,
+      "openRate": 61.2,
+      "replyRate": 22.7
+    }
+  ],
+  "dailyMetrics": [
+    {
+      "clientId": 1,
+      "date": "2026-01-13",
+      "emailsSent": 3714,
+      "opens": 1413,
+      "replies": 411,
+      "bounces": 98
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-14",
+      "emailsSent": 3532,
+      "opens": 1595,
+      "replies": 474,
+      "bounces": 109
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-15",
+      "emailsSent": 4736,
+      "opens": 2112,
+      "replies": 514,
+      "bounces": 129
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-16",
+      "emailsSent": 4038,
+      "opens": 2109,
+      "replies": 641,
+      "bounces": 132
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-17",
+      "emailsSent": 4146,
+      "opens": 1836,
+      "replies": 519,
+      "bounces": 109
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-18",
+      "emailsSent": 4025,
+      "opens": 1720,
+      "replies": 543,
+      "bounces": 136
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-19",
+      "emailsSent": 4772,
+      "opens": 2336,
+      "replies": 458,
+      "bounces": 118
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-20",
+      "emailsSent": 4384,
+      "opens": 1791,
+      "replies": 417,
+      "bounces": 102
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-21",
+      "emailsSent": 3573,
+      "opens": 1796,
+      "replies": 301,
+      "bounces": 131
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-22",
+      "emailsSent": 4725,
+      "opens": 1844,
+      "replies": 694,
+      "bounces": 112
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-23",
+      "emailsSent": 4267,
+      "opens": 1896,
+      "replies": 595,
+      "bounces": 111
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-24",
+      "emailsSent": 3912,
+      "opens": 1680,
+      "replies": 537,
+      "bounces": 103
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-25",
+      "emailsSent": 4288,
+      "opens": 1876,
+      "replies": 473,
+      "bounces": 125
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-26",
+      "emailsSent": 3480,
+      "opens": 1525,
+      "replies": 413,
+      "bounces": 134
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-27",
+      "emailsSent": 3760,
+      "opens": 1962,
+      "replies": 454,
+      "bounces": 88
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-28",
+      "emailsSent": 4292,
+      "opens": 2153,
+      "replies": 427,
+      "bounces": 131
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-29",
+      "emailsSent": 4892,
+      "opens": 2306,
+      "replies": 687,
+      "bounces": 147
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-30",
+      "emailsSent": 3810,
+      "opens": 1451,
+      "replies": 550,
+      "bounces": 129
+    },
+    {
+      "clientId": 1,
+      "date": "2026-01-31",
+      "emailsSent": 4979,
+      "opens": 2322,
+      "replies": 639,
+      "bounces": 182
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-01",
+      "emailsSent": 3188,
+      "opens": 1688,
+      "replies": 332,
+      "bounces": 81
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-02",
+      "emailsSent": 3016,
+      "opens": 1432,
+      "replies": 442,
+      "bounces": 73
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-03",
+      "emailsSent": 3261,
+      "opens": 1681,
+      "replies": 438,
+      "bounces": 77
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-04",
+      "emailsSent": 3302,
+      "opens": 1612,
+      "replies": 292,
+      "bounces": 76
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-05",
+      "emailsSent": 3209,
+      "opens": 1440,
+      "replies": 445,
+      "bounces": 119
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-06",
+      "emailsSent": 4629,
+      "opens": 1807,
+      "replies": 372,
+      "bounces": 101
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-07",
+      "emailsSent": 3790,
+      "opens": 1564,
+      "replies": 496,
+      "bounces": 91
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-08",
+      "emailsSent": 3075,
+      "opens": 1491,
+      "replies": 473,
+      "bounces": 103
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-09",
+      "emailsSent": 4381,
+      "opens": 2020,
+      "replies": 607,
+      "bounces": 87
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-10",
+      "emailsSent": 3345,
+      "opens": 1361,
+      "replies": 534,
+      "bounces": 119
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-11",
+      "emailsSent": 3101,
+      "opens": 1441,
+      "replies": 387,
+      "bounces": 81
+    },
+    {
+      "clientId": 1,
+      "date": "2026-02-12",
+      "emailsSent": 4726,
+      "opens": 2097,
+      "replies": 570,
+      "bounces": 152
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "name": "Weekly Summary - Feb 5",
+      "type": "weekly",
+      "dateFrom": "2026-01-29",
+      "dateTo": "2026-02-05",
+      "createdAt": "2026-02-12T07:12:04.360Z"
+    },
+    {
+      "id": 2,
+      "clientId": 1,
+      "name": "Monthly Performance - Jan",
+      "type": "monthly",
+      "dateFrom": "2026-01-01",
+      "dateTo": "2026-01-31",
+      "createdAt": "2026-02-12T07:12:04.360Z"
+    },
+    {
+      "id": 3,
+      "clientId": 1,
+      "name": "Campaign Report - Cold Outreach",
+      "type": "campaign",
+      "dateFrom": "2026-01-15",
+      "dateTo": "2026-02-05",
+      "createdAt": "2026-02-12T07:12:04.360Z"
+    }
+  ]
+}

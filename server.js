@@ -40,7 +40,13 @@ async function instantlyFetch(apiKey, endpoint, method = 'GET', body = null) {
 // Load or initialize data
 function loadData() {
   if (fs.existsSync(DATA_PATH)) {
-    return JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+    const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+    // Check if data has new structure (agencies), if not, reinitialize
+    if (!data.agencies) {
+      console.log('Migrating to new data structure...');
+      return initializeData();
+    }
+    return data;
   }
   return initializeData();
 }

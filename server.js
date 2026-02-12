@@ -238,16 +238,20 @@ app.get('/api/dashboard', requireAuth, async (req, res) => {
         const endDate = new Date().toISOString().split('T')[0];
         const startDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
         
-        if (campaigns?.items) {
-          for (const campaign of campaigns.items.slice(0, 10)) {
-            const analytics = await instantlyFetch(subAccount.instantlyApiKey, `/campaigns/${campaign.id}/analytics?start_date=${startDate}&end_date=${endDate}`);
-            if (analytics) {
-              totalSent += analytics.total_sent || 0;
-              totalOpens += analytics.total_opened || 0;
-              totalReplies += analytics.total_replied || 0;
-              totalBounces += analytics.total_bounced || 0;
-            }
-          }
+        // Use account-level daily analytics (correct v2 endpoint)
+        const dailyAnalytics = await instantlyFetch(subAccount.instantlyApiKey, `/accounts/analytics/daily?start_date=${startDate}&end_date=${endDate}`);
+        if (Array.isArray(dailyAnalytics)) {
+          dailyAnalytics.forEach(d => {
+            totalSent += d.sent || 0;
+            totalBounces += d.bounced || 0;
+          });
+        }
+        
+        // Get campaign summary for opens/replies
+        const campaignSummary = await instantlyFetch(subAccount.instantlyApiKey, `/analytics/campaign/summary?start_date=${startDate}&end_date=${endDate}`);
+        if (campaignSummary && !campaignSummary.error) {
+          totalOpens += campaignSummary.total_opened || campaignSummary.opened || 0;
+          totalReplies += campaignSummary.total_replied || campaignSummary.replied || 0;
         }
       } catch (e) {
         console.error('Instantly error for', subAccount.name, e);
@@ -312,17 +316,16 @@ app.get('/api/analytics/daily', requireAuth, async (req, res) => {
         
         const analytics = await instantlyFetch(subAccount.instantlyApiKey, `/accounts/analytics/daily?start_date=${startDate}&end_date=${endDate}`);
         
-        if (analytics?.data) {
-          analytics.data.forEach(d => {
-            if (!metricsMap[d.date]) {
-              metricsMap[d.date] = { date: d.date, emails_sent: 0, opens: 0, replies: 0, bounces: 0 };
-            }
-            metricsMap[d.date].emails_sent += d.sent || 0;
-            metricsMap[d.date].opens += d.opened || 0;
-            metricsMap[d.date].replies += d.replied || 0;
-            metricsMap[d.date].bounces += d.bounced || 0;
-          });
-        }
+        // API returns array directly, not { data: [...] }
+        const analyticsData = Array.isArray(analytics) ? analytics : (analytics?.data || []);
+        analyticsData.forEach(d => {
+          if (!metricsMap[d.date]) {
+            metricsMap[d.date] = { date: d.date, emails_sent: 0, opens: 0, replies: 0, bounces: 0 };
+          }
+          metricsMap[d.date].emails_sent += d.sent || 0;
+          metricsMap[d.date].bounces += d.bounced || 0;
+          // Note: opens/replies not in daily account analytics
+        });
       } catch (e) {
         console.error('Instantly analytics error:', e);
       }

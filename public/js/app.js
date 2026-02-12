@@ -2,12 +2,15 @@
 
 let sendsChart = null;
 let analyticsChart = null;
+let currentSubAccount = null; // null = all sub-accounts
+let subAccounts = [];
 
 // Check auth on load
 document.addEventListener('DOMContentLoaded', async () => {
   const isLoggedIn = await checkAuth();
   if (isLoggedIn) {
     showApp();
+    await loadSubAccounts();
     loadDashboard();
   } else {
     showLogin();
@@ -23,10 +26,38 @@ async function checkAuth() {
       const user = await res.json();
       document.getElementById('user-name').textContent = user.company_name;
       document.getElementById('user-initials').textContent = getInitials(user.company_name);
+      subAccounts = user.subAccounts || [];
       return true;
     }
   } catch (e) {}
   return false;
+}
+
+async function loadSubAccounts() {
+  try {
+    const res = await fetch('/api/sub-accounts');
+    if (res.ok) {
+      subAccounts = await res.json();
+      updateSubAccountSelector();
+    }
+  } catch (e) {}
+}
+
+function updateSubAccountSelector() {
+  const selector = document.getElementById('sub-account-select');
+  if (!selector) return;
+  
+  selector.innerHTML = '<option value="">All Sub-Accounts</option>';
+  subAccounts.forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s.id;
+    opt.textContent = s.name + (s.hasInstantly ? ' 🟢' : '');
+    selector.appendChild(opt);
+  });
+}
+
+function getSubAccountParam() {
+  return currentSubAccount ? `subAccountId=${currentSubAccount}` : '';
 }
 
 function getInitials(name) {
@@ -135,10 +166,11 @@ function setupEventListeners() {
 
 async function loadDashboard() {
   try {
+    const param = getSubAccountParam();
     const [dashRes, dailyRes, campaignsRes] = await Promise.all([
-      fetch('/api/dashboard'),
-      fetch('/api/analytics/daily?days=30'),
-      fetch('/api/analytics/campaigns')
+      fetch(`/api/dashboard?${param}`),
+      fetch(`/api/analytics/daily?days=30&${param}`),
+      fetch(`/api/analytics/campaigns?${param}`)
     ]);
     
     const dashboard = await dashRes.json();
@@ -250,9 +282,10 @@ function renderCampaignRates(campaigns) {
 
 async function loadAnalytics() {
   const days = document.getElementById('analytics-range').value;
+  const param = getSubAccountParam();
   
   try {
-    const res = await fetch(`/api/analytics/daily?days=${days}`);
+    const res = await fetch(`/api/analytics/daily?days=${days}&${param}`);
     const data = await res.json();
     
     // Calculate totals
@@ -345,7 +378,8 @@ function renderAnalyticsChart(data) {
 
 async function loadCampaigns(filter = 'all') {
   try {
-    const res = await fetch('/api/campaigns');
+    const param = getSubAccountParam();
+    const res = await fetch(`/api/campaigns?${param}`);
     let campaigns = await res.json();
     
     if (filter !== 'all') {
@@ -364,7 +398,10 @@ async function loadCampaigns(filter = 'all') {
               <div style="width: 32px; height: 32px; background: #f3e8ff; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                 📧
               </div>
-              ${c.name}
+              <div>
+                <div>${c.name}</div>
+                ${c.subAccount ? `<div style="font-size: 12px; color: #9ca3af;">${c.subAccount}</div>` : ''}
+              </div>
             </div>
           </td>
           <td><span class="status-badge ${c.status}">${c.status}</span></td>

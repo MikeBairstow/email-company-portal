@@ -131,7 +131,9 @@
             <p>Welcome back! Here's your performance overview.</p>
           </div>
           <div class="header-actions">
-            <span class="date-range">Last 30 Days</span>
+            <select id="sub-account-select" class="select-range" onchange="currentSubAccount = this.value || null; loadDashboard();">
+              <option value="">All Sub-Accounts</option>
+            </select>
             <button class="btn-secondary" onclick="loadDashboard()">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M23 4v6h-6"/>

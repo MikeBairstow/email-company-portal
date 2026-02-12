@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Company - Client Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="login-screen" class="login-container">
+    <div class="login-card">
+      <div class="login-logo">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <rect width="48" height="48" rx="12" fill="url(#grad1)"/>
+          <path d="M12 18L24 26L36 18" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="10" y="14" width="28" height="20" rx="3" stroke="white" stroke-width="2.5" fill="none"/>
+          <defs>
+            <linearGradient id="grad1" x1="0" y1="0" x2="48" y2="48">
+              <stop offset="0%" stop-color="#8B5CF6"/>
+              <stop offset="100%" stop-color="#6366F1"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h1>Email Company</h1>
+      </div>
+      <h2>Welcome back</h2>
+      <p class="login-subtitle">Sign in to access your dashboard</p>
+      <form id="login-form">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="login-email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary btn-full">Sign In</button>
+      </form>
+      <p class="login-demo">Demo: demo@agency.com / demo2026</p>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="app-container" style="display: none;">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+          <rect width="48" height="48" rx="12" fill="url(#grad2)"/>
+          <path d="M12 18L24 26L36 18" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="10" y="14" width="28" height="20" rx="3" stroke="white" stroke-width="2.5" fill="none"/>
+          <defs>
+            <linearGradient id="grad2" x1="0" y1="0" x2="48" y2="48">
+              <stop offset="0%" stop-color="#8B5CF6"/>
+              <stop offset="100%" stop-color="#6366F1"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Email Company</span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-page="dashboard">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          Dashboard
+        </a>
+        <a href="#" class="nav-item" data-page="analytics">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3v18h18"/>
+            <path d="M18 9l-5 5-4-4-3 3"/>
+          </svg>
+          Analytics
+        </a>
+        <a href="#" class="nav-item" data-page="campaigns">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 12L16 6v4H4v4h12v4l6-6z"/>
+          </svg>
+          Campaigns
+        </a>
+        <a href="#" class="nav-item" data-page="reports">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+          Reports
+        </a>
+        <a href="#" class="nav-item" data-page="settings">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">
+            <span id="user-initials">DA</span>
+          </div>
+          <span id="user-name">Demo Agency</span>
+        </div>
+        <button id="logout-btn" class="btn-logout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Dashboard Page -->
+      <div id="page-dashboard" class="page active">
+        <header class="page-header">
+          <div class="header-gradient">
+            <h1>Dashboard 📊</h1>
+            <p>Welcome back! Here's your performance overview.</p>
+          </div>
+          <div class="header-actions">
+            <span class="date-range">Last 30 Days</span>
+            <button class="btn-secondary" onclick="loadDashboard()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 4v6h-6"/>
+                <path d="M1 20v-6h6"/>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+              </svg>
+              Refresh
+            </button>
+          </div>
+        </header>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12L16 6v4H4v4h12v4l6-6z"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-label">Total Sent</span>
+              <span class="stat-value" id="stat-sent">-</span>
+              <span class="stat-change positive">+12%</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-label">Avg Open Rate</span>
+              <span class="stat-value" id="stat-open">-</span>
+              <span class="stat-change positive">+5.2%</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-label">Avg Reply Rate</span>
+              <span class="stat-value" id="stat-reply">-</span>
+              <span class="stat-change negative">-1.5%</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-label">Bounce Rate</span>
+              <span class="stat-value" id="stat-bounce">-</span>
+              <span class="stat-change positive">+0.4%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-grid">
+          <div class="card chart-card">
+            <div class="card-header">
+              <h3>Sends Over Time</h3>
+            </div>
+            <div class="chart-container">
+              <canvas id="sends-chart"></canvas>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3>Open Rates by Campaign</h3>
+            </div>
+            <div id="campaign-rates" class="campaign-rates"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics Page -->
+      <div id="page-analytics" class="page">
+        <header class="page-header">
+          <div class="header-gradient">
+            <h1>Performance Analytics 📈</h1>
+            <p>Deep dive into your email performance metrics.</p>
+          </div>
+          <div class="header-actions">
+            <select class="select-range" id="analytics-range">
+              <option value="7">Last 7 Days</option>
+              <option value="30" selected>Last 30 Days</option>
+              <option value="90">Last 90 Days</option>
+            </select>
+            <button class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Export Data
+            </button>
+          </div>
+        </header>
+
+        <div class="stats-grid">
+          <div class="stat-card large">
+            <div class="stat-content">
+              <span class="stat-label">Total Emails Sent</span>
+              <span class="stat-value large" id="analytics-sent">-</span>
+            </div>
+          </div>
+          <div class="stat-card large">
+            <div class="stat-content">
+              <span class="stat-label">Total Opens</span>
+              <span class="stat-value large" id="analytics-opens">-</span>
+            </div>
+          </div>
+          <div class="stat-card large">
+            <div class="stat-content">
+              <span class="stat-label">Total Replies</span>
+              <span class="stat-value large" id="analytics-replies">-</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card chart-card full-width">
+          <div class="card-header">
+            <h3>Daily Performance</h3>
+          </div>
+          <div class="chart-container large">
+            <canvas id="analytics-chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campaigns Page -->
+      <div id="page-campaigns" class="page">
+        <header class="page-header">
+          <div class="header-gradient">
+            <h1>Your Campaigns ✉️</h1>
+            <p>Manage and monitor your active campaigns.</p>
+          </div>
+          <div class="header-actions">
+            <div class="filter-pills">
+              <button class="pill active" data-filter="all">All</button>
+              <button class="pill" data-filter="active">Active</button>
+              <button class="pill" data-filter="paused">Paused</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="card">
+          <table class="campaigns-table">
+            <thead>
+              <tr>
+                <th>Campaign Name</th>
+                <th>Status</th>
+                <th>Inboxes</th>
+                <th>Daily Sends</th>
+                <th>Open Rate</th>
+                <th>Reply Rate</th>
+                <th>Performance</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="campaigns-table-body">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Reports Page -->
+      <div id="page-reports" class="page">
+        <header class="page-header">
+          <div class="header-gradient">
+            <h1>White-Label Reports 📄</h1>
+            <p>Generate branded reports for your clients.</p>
+          </div>
+        </header>
+
+        <div class="reports-grid">
+          <div class="card report-preview">
+            <div class="card-header">
+              <h3>Report Preview</h3>
+            </div>
+            <div class="preview-placeholder">
+              <div class="preview-doc">
+                <div class="preview-header"></div>
+                <div class="preview-chart"></div>
+                <div class="preview-lines">
+                  <div></div><div></div><div></div>
+                </div>
+              </div>
+              <p>Upload Your Logo</p>
+            </div>
+          </div>
+          <div class="card report-options">
+            <div class="card-header">
+              <h3>Report Templates</h3>
+            </div>
+            <div class="template-grid">
+              <div class="template-card active">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <span>Weekly Summary</span>
+              </div>
+              <div class="template-card">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 3v18h18"/>
+                  <path d="M18 9l-5 5-4-4-3 3"/>
+                </svg>
+                <span>Monthly Performance</span>
+              </div>
+              <div class="template-card">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M22 12L16 6v4H4v4h12v4l6-6z"/>
+                </svg>
+                <span>Campaign Report</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Frequency</label>
+              <select class="select-full">
+                <option>Weekly</option>
+                <option>Monthly</option>
+                <option>On Demand</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Recipient Email</label>
+              <input type="email" placeholder="client@company.com">
+            </div>
+            <button class="btn-primary btn-full">Generate Report</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Recent Reports</h3>
+          </div>
+          <div id="reports-list" class="reports-list">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings Page -->
+      <div id="page-settings" class="page">
+        <header class="page-header">
+          <div class="header-gradient">
+            <h1>Account Settings ⚙️</h1>
+            <p>Manage your profile and preferences.</p>
+          </div>
+        </header>
+
+        <div class="settings-grid">
+          <div class="card">
+            <div class="card-header">
+              <h3>Agency Profile</h3>
+            </div>
+            <form id="settings-form">
+              <div class="form-group">
+                <label>Agency Name</label>
+                <input type="text" id="settings-name" placeholder="Your Agency">
+              </div>
+              <div class="form-group">
+                <label>Contact Email</label>
+                <input type="email" id="settings-email" disabled>
+              </div>
+              <div class="form-group">
+                <label>Company Logo</label>
+                <div class="logo-upload">
+                  <div class="logo-preview" id="logo-preview">
+                    <span>E</span>
+                  </div>
+                  <button type="button" class="btn-secondary">Upload Logo</button>
+                  <span class="upload-hint">Max size 2MB, PNG or JPG</span>
+                </div>
+              </div>
+              <button type="submit" class="btn-primary">Save Changes</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Notifications</h3>
+            </div>
+            <div class="toggle-list">
+              <div class="toggle-item">
+                <div>
+                  <span class="toggle-label">Daily Email Alerts</span>
+                  <span class="toggle-desc">Get daily performance summaries</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="toggle-item">
+                <div>
+                  <span class="toggle-label">Weekly Performance Digests</span>
+                  <span class="toggle-desc">Comprehensive weekly reports</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="toggle-item">
+                <div>
+                  <span class="toggle-label">Campaign Status Alerts</span>
+                  <span class="toggle-desc">Get notified of status changes</span>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

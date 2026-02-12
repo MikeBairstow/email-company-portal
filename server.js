@@ -16,6 +16,27 @@ if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
+// Instantly API helper
+async function instantlyFetch(apiKey, endpoint, method = 'GET', body = null) {
+  const url = `https://api.instantly.ai/api/v2${endpoint}`;
+  const options = {
+    method,
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json'
+    }
+  };
+  if (body) options.body = JSON.stringify(body);
+  
+  try {
+    const response = await fetch(url, options);
+    return await response.json();
+  } catch (e) {
+    console.error('Instantly API error:', e);
+    return null;
+  }
+}
+
 // Load or initialize data
 function loadData() {
   if (fs.existsSync(DATA_PATH)) {
@@ -29,9 +50,10 @@ function saveData(data) {
 }
 
 function initializeData() {
-  const hash = bcrypt.hashSync('demo2026', 10);
+  const demoHash = bcrypt.hashSync('demo2026', 10);
+  const daHash = bcrypt.hashSync('DA2026!', 10);
   
-  // Generate 30 days of metrics
+  // Generate 30 days of demo metrics
   const dailyMetrics = [];
   for (let i = 30; i >= 0; i--) {
     const date = new Date();
@@ -45,15 +67,28 @@ function initializeData() {
   }
   
   const data = {
-    clients: [{
-      id: 1,
-      email: 'demo@agency.com',
-      password: hash,
-      companyName: 'Demo Agency',
-      logoUrl: null,
-      createdAt: new Date().toISOString(),
-      lastLogin: null
-    }],
+    clients: [
+      {
+        id: 1,
+        email: 'demo@agency.com',
+        password: demoHash,
+        companyName: 'Demo Agency',
+        logoUrl: null,
+        instantlyApiKey: null, // Demo uses mock data
+        createdAt: new Date().toISOString(),
+        lastLogin: null
+      },
+      {
+        id: 2,
+        email: 'da@client.com',
+        password: daHash,
+        companyName: 'DA',
+        logoUrl: null,
+        instantlyApiKey: 'ODZkYzBiYzItZGRmZS00NWE5LWFlMGMtYTNiZjhlNDAwOTIwOkd1Z0ZvdVFJb05WQQ==', // Cyberhornet
+        createdAt: new Date().toISOString(),
+        lastLogin: null
+      }
+    ],
     campaigns: [
       { id: 1, clientId: 1, name: 'SaaS Outreach - Q1', status: 'active', inboxes: 3, dailySends: 450, dailyLimit: 500, openRate: 42.5, replyRate: 12.8 },
       { id: 2, clientId: 1, name: 'Product Launch - Beta', status: 'paused', inboxes: 1, dailySends: 0, dailyLimit: 200, openRate: 35.1, replyRate: 8.4 },
@@ -75,6 +110,22 @@ function initializeData() {
 
 // Initialize data
 let data = loadData();
+
+// Add DA client if not exists
+if (!data.clients.find(c => c.email === 'da@client.com')) {
+  const daHash = bcrypt.hashSync('DA2026!', 10);
+  data.clients.push({
+    id: 2,
+    email: 'da@client.com',
+    password: daHash,
+    companyName: 'DA',
+    logoUrl: null,
+    instantlyApiKey: 'ODZkYzBiYzItZGRmZS00NWE5LWFlMGMtYTNiZjhlNDAwOTIwOkd1Z0ZvdVFJb05WQQ==',
+    createdAt: new Date().toISOString(),
+    lastLogin: null
+  });
+  saveData(data);
+}
 
 // Middleware
 app.use(express.json());
@@ -123,15 +174,64 @@ app.get('/api/me', requireAuth, (req, res) => {
     id: client.id,
     email: client.email,
     company_name: client.companyName,
-    logo_url: client.logoUrl
+    logo_url: client.logoUrl,
+    has_instantly: !!client.instantlyApiKey
   });
 });
 
-// Dashboard API
-app.get('/api/dashboard', requireAuth, (req, res) => {
+// Dashboard API - supports real Instantly data
+app.get('/api/dashboard', requireAuth, async (req, res) => {
   const clientId = req.session.clientId;
+  const client = data.clients.find(c => c.id === clientId);
   
-  // Get last 30 days of metrics
+  // If client has Instantly API key, fetch real data
+  if (client && client.instantlyApiKey) {
+    try {
+      // Get accounts
+      const accounts = await instantlyFetch(client.instantlyApiKey, '/accounts?limit=100');
+      const totalInboxes = accounts?.items?.length || 0;
+      
+      // Get campaign analytics
+      const campaigns = await instantlyFetch(client.instantlyApiKey, '/campaigns?limit=100');
+      const activeCampaigns = campaigns?.items?.filter(c => c.status === 'active')?.length || 0;
+      
+      // Get analytics summary (last 30 days)
+      const endDate = new Date().toISOString().split('T')[0];
+      const startDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      
+      let totalSent = 0, totalOpens = 0, totalReplies = 0, totalBounces = 0;
+      
+      if (campaigns?.items) {
+        for (const campaign of campaigns.items) {
+          const analytics = await instantlyFetch(client.instantlyApiKey, `/campaigns/${campaign.id}/analytics?start_date=${startDate}&end_date=${endDate}`);
+          if (analytics) {
+            totalSent += analytics.total_sent || 0;
+            totalOpens += analytics.total_opened || 0;
+            totalReplies += analytics.total_replied || 0;
+            totalBounces += analytics.total_bounced || 0;
+          }
+        }
+      }
+      
+      const openRate = totalSent > 0 ? ((totalOpens / totalSent) * 100).toFixed(1) : 0;
+      const replyRate = totalSent > 0 ? ((totalReplies / totalSent) * 100).toFixed(1) : 0;
+      const bounceRate = totalSent > 0 ? ((totalBounces / totalSent) * 100).toFixed(1) : 0;
+      
+      return res.json({
+        totalSent,
+        openRate: parseFloat(openRate),
+        replyRate: parseFloat(replyRate),
+        bounceRate: parseFloat(bounceRate),
+        activeCampaigns,
+        totalInboxes,
+        isLive: true
+      });
+    } catch (e) {
+      console.error('Instantly fetch error:', e);
+    }
+  }
+  
+  // Fallback to mock data
   const thirtyDaysAgo = new Date();
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
   const thirtyDaysAgoStr = thirtyDaysAgo.toISOString().split('T')[0];
@@ -161,15 +261,43 @@ app.get('/api/dashboard', requireAuth, (req, res) => {
     replyRate: parseFloat(replyRate),
     bounceRate: parseFloat(bounceRate),
     activeCampaigns,
-    totalInboxes
+    totalInboxes,
+    isLive: false
   });
 });
 
 // Analytics API
-app.get('/api/analytics/daily', requireAuth, (req, res) => {
+app.get('/api/analytics/daily', requireAuth, async (req, res) => {
   const clientId = req.session.clientId;
+  const client = data.clients.find(c => c.id === clientId);
   const days = parseInt(req.query.days) || 30;
   
+  // If client has Instantly API key, fetch real data
+  if (client && client.instantlyApiKey) {
+    try {
+      const endDate = new Date().toISOString().split('T')[0];
+      const startDate = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      
+      // Get daily analytics from accounts
+      const analytics = await instantlyFetch(client.instantlyApiKey, `/accounts/analytics/daily?start_date=${startDate}&end_date=${endDate}`);
+      
+      if (analytics?.data) {
+        const metrics = analytics.data.map(d => ({
+          date: d.date,
+          emails_sent: d.sent || 0,
+          opens: d.opened || 0,
+          replies: d.replied || 0,
+          bounces: d.bounced || 0
+        })).sort((a, b) => a.date.localeCompare(b.date));
+        
+        return res.json(metrics);
+      }
+    } catch (e) {
+      console.error('Instantly analytics error:', e);
+    }
+  }
+  
+  // Fallback to mock data
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - days);
   const cutoffStr = cutoff.toISOString().split('T')[0];
@@ -188,9 +316,37 @@ app.get('/api/analytics/daily', requireAuth, (req, res) => {
   res.json(metrics);
 });
 
-app.get('/api/analytics/campaigns', requireAuth, (req, res) => {
+app.get('/api/analytics/campaigns', requireAuth, async (req, res) => {
   const clientId = req.session.clientId;
+  const client = data.clients.find(c => c.id === clientId);
   
+  // If client has Instantly API key, fetch real data
+  if (client && client.instantlyApiKey) {
+    try {
+      const campaigns = await instantlyFetch(client.instantlyApiKey, '/campaigns?limit=100');
+      
+      if (campaigns?.items) {
+        const results = [];
+        for (const c of campaigns.items.filter(c => c.status === 'active').slice(0, 5)) {
+          const analytics = await instantlyFetch(client.instantlyApiKey, `/campaigns/${c.id}/analytics`);
+          const sent = analytics?.total_sent || 0;
+          const opens = analytics?.total_opened || 0;
+          const replies = analytics?.total_replied || 0;
+          
+          results.push({
+            name: c.name,
+            open_rate: sent > 0 ? parseFloat(((opens / sent) * 100).toFixed(1)) : 0,
+            reply_rate: sent > 0 ? parseFloat(((replies / sent) * 100).toFixed(1)) : 0
+          });
+        }
+        return res.json(results.sort((a, b) => b.open_rate - a.open_rate));
+      }
+    } catch (e) {
+      console.error('Instantly campaigns error:', e);
+    }
+  }
+  
+  // Fallback to mock data
   const campaigns = data.campaigns
     .filter(c => c.clientId === clientId && c.status === 'active')
     .map(c => ({
@@ -204,9 +360,48 @@ app.get('/api/analytics/campaigns', requireAuth, (req, res) => {
 });
 
 // Campaigns API
-app.get('/api/campaigns', requireAuth, (req, res) => {
+app.get('/api/campaigns', requireAuth, async (req, res) => {
   const clientId = req.session.clientId;
+  const client = data.clients.find(c => c.id === clientId);
   
+  // If client has Instantly API key, fetch real data
+  if (client && client.instantlyApiKey) {
+    try {
+      const campaigns = await instantlyFetch(client.instantlyApiKey, '/campaigns?limit=100');
+      const accounts = await instantlyFetch(client.instantlyApiKey, '/accounts?limit=100');
+      
+      if (campaigns?.items) {
+        const results = [];
+        for (const c of campaigns.items) {
+          const analytics = await instantlyFetch(client.instantlyApiKey, `/campaigns/${c.id}/analytics`);
+          const sent = analytics?.total_sent || 0;
+          const opens = analytics?.total_opened || 0;
+          const replies = analytics?.total_replied || 0;
+          
+          // Count inboxes for this campaign
+          const campaignAccounts = accounts?.items?.filter(a => 
+            a.campaign_id === c.id || !a.campaign_id
+          )?.length || 1;
+          
+          results.push({
+            id: c.id,
+            name: c.name,
+            status: c.status || 'active',
+            inboxes: campaignAccounts,
+            daily_sends: analytics?.daily_sent || 0,
+            daily_limit: c.daily_limit || 500,
+            open_rate: sent > 0 ? parseFloat(((opens / sent) * 100).toFixed(1)) : 0,
+            reply_rate: sent > 0 ? parseFloat(((replies / sent) * 100).toFixed(1)) : 0
+          });
+        }
+        return res.json(results);
+      }
+    } catch (e) {
+      console.error('Instantly campaigns error:', e);
+    }
+  }
+  
+  // Fallback to mock data
   const campaigns = data.campaigns
     .filter(c => c.clientId === clientId)
     .map(c => ({

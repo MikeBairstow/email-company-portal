@@ -1,349 +1,2062 @@
 {
-  "clients": [
+  "partners": [
     {
-      "id": 1,
+      "id": "partner_001",
       "email": "demo@agency.com",
-      "password": "$2a$10$iJGExfMpskKhubrGlvi.4.NxXi356ss2gYCcgR43T4WJKH9vbrTyO",
-      "companyName": "Demo Agency",
+      "password": "$2a$10$GO0jXWNOtwd63A4i.ryX4uyOEL0cuuv8820w5e/n60HrgfOw0E8WS",
+      "name": "Demo Agency",
       "logoUrl": null,
-      "createdAt": "2026-02-12T07:12:04.360Z",
-      "lastLogin": null
+      "contactEmail": "team@demo-agency.com",
+      "phone": "+1-555-0123",
+      "createdAt": "2026-02-15T18:19:03.408Z",
+      "lastLogin": "2026-02-15T18:19:41.708Z",
+      "notifications": {
+        "emailAlerts": true,
+        "weeklySummary": true,
+        "campaignAlerts": false
+      },
+      "whiteLabel": {
+        "customLogoUrl": null,
+        "primaryColor": "#7C50F9"
+      }
     }
   ],
-  "campaigns": [
+  "partnerUsers": [
     {
-      "id": 1,
-      "clientId": 1,
-      "name": "SaaS Outreach - Q1",
-      "status": "active",
-      "inboxes": 3,
-      "dailySends": 450,
-      "dailyLimit": 500,
-      "openRate": 42.5,
-      "replyRate": 12.8
-    },
-    {
-      "id": 2,
-      "clientId": 1,
-      "name": "Product Launch - Beta",
-      "status": "paused",
-      "inboxes": 1,
-      "dailySends": 0,
-      "dailyLimit": 200,
-      "openRate": 35.1,
-      "replyRate": 8.4
-    },
-    {
-      "id": 3,
-      "clientId": 1,
-      "name": "Follow-up Sequence",
-      "status": "active",
-      "inboxes": 2,
-      "dailySends": 150,
-      "dailyLimit": 250,
-      "openRate": 55.9,
-      "replyRate": 18.2
-    },
-    {
-      "id": 4,
-      "clientId": 1,
-      "name": "Lost Leads Re-engagement",
-      "status": "active",
-      "inboxes": 1,
-      "dailySends": 75,
-      "dailyLimit": 100,
-      "openRate": 28.3,
-      "replyRate": 4.5
-    },
-    {
-      "id": 5,
-      "clientId": 1,
-      "name": "Event Invitation",
-      "status": "paused",
-      "inboxes": 1,
-      "dailySends": 0,
-      "dailyLimit": 300,
-      "openRate": 61.2,
-      "replyRate": 22.7
+      "id": "user_001",
+      "partnerId": "partner_001",
+      "name": "John Demo",
+      "email": "john@demo-agency.com",
+      "role": "admin"
     }
   ],
-  "dailyMetrics": [
+  "subAccounts": [
     {
-      "clientId": 1,
-      "date": "2026-01-13",
-      "emailsSent": 3714,
-      "opens": 1413,
-      "replies": 411,
-      "bounces": 98
+      "id": "sub_001",
+      "partnerId": "partner_001",
+      "companyName": "Acme Corp",
+      "status": "active",
+      "instantlyApiKey": null,
+      "createdAt": "2026-02-15T18:19:03.409Z"
     },
     {
-      "clientId": 1,
-      "date": "2026-01-14",
-      "emailsSent": 3532,
-      "opens": 1595,
-      "replies": 474,
-      "bounces": 109
+      "id": "sub_002",
+      "partnerId": "partner_001",
+      "companyName": "TechStart Inc",
+      "status": "active",
+      "instantlyApiKey": null,
+      "createdAt": "2026-02-15T18:19:03.409Z"
     },
     {
-      "clientId": 1,
-      "date": "2026-01-15",
-      "emailsSent": 4736,
-      "opens": 2112,
-      "replies": 514,
-      "bounces": 129
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-16",
-      "emailsSent": 4038,
-      "opens": 2109,
-      "replies": 641,
-      "bounces": 132
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-17",
-      "emailsSent": 4146,
-      "opens": 1836,
-      "replies": 519,
-      "bounces": 109
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-18",
-      "emailsSent": 4025,
-      "opens": 1720,
-      "replies": 543,
-      "bounces": 136
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-19",
-      "emailsSent": 4772,
-      "opens": 2336,
-      "replies": 458,
-      "bounces": 118
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-20",
-      "emailsSent": 4384,
-      "opens": 1791,
-      "replies": 417,
-      "bounces": 102
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-21",
-      "emailsSent": 3573,
-      "opens": 1796,
-      "replies": 301,
-      "bounces": 131
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-22",
-      "emailsSent": 4725,
-      "opens": 1844,
-      "replies": 694,
-      "bounces": 112
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-23",
-      "emailsSent": 4267,
-      "opens": 1896,
-      "replies": 595,
-      "bounces": 111
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-24",
-      "emailsSent": 3912,
-      "opens": 1680,
-      "replies": 537,
-      "bounces": 103
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-25",
-      "emailsSent": 4288,
-      "opens": 1876,
-      "replies": 473,
-      "bounces": 125
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-26",
-      "emailsSent": 3480,
-      "opens": 1525,
-      "replies": 413,
-      "bounces": 134
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-27",
-      "emailsSent": 3760,
-      "opens": 1962,
-      "replies": 454,
-      "bounces": 88
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-28",
-      "emailsSent": 4292,
-      "opens": 2153,
-      "replies": 427,
-      "bounces": 131
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-29",
-      "emailsSent": 4892,
-      "opens": 2306,
-      "replies": 687,
-      "bounces": 147
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-30",
-      "emailsSent": 3810,
-      "opens": 1451,
-      "replies": 550,
-      "bounces": 129
-    },
-    {
-      "clientId": 1,
-      "date": "2026-01-31",
-      "emailsSent": 4979,
-      "opens": 2322,
-      "replies": 639,
-      "bounces": 182
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-01",
-      "emailsSent": 3188,
-      "opens": 1688,
-      "replies": 332,
-      "bounces": 81
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-02",
-      "emailsSent": 3016,
-      "opens": 1432,
-      "replies": 442,
-      "bounces": 73
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-03",
-      "emailsSent": 3261,
-      "opens": 1681,
-      "replies": 438,
-      "bounces": 77
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-04",
-      "emailsSent": 3302,
-      "opens": 1612,
-      "replies": 292,
-      "bounces": 76
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-05",
-      "emailsSent": 3209,
-      "opens": 1440,
-      "replies": 445,
-      "bounces": 119
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-06",
-      "emailsSent": 4629,
-      "opens": 1807,
-      "replies": 372,
-      "bounces": 101
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-07",
-      "emailsSent": 3790,
-      "opens": 1564,
-      "replies": 496,
-      "bounces": 91
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-08",
-      "emailsSent": 3075,
-      "opens": 1491,
-      "replies": 473,
-      "bounces": 103
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-09",
-      "emailsSent": 4381,
-      "opens": 2020,
-      "replies": 607,
-      "bounces": 87
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-10",
-      "emailsSent": 3345,
-      "opens": 1361,
-      "replies": 534,
-      "bounces": 119
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-11",
-      "emailsSent": 3101,
-      "opens": 1441,
-      "replies": 387,
-      "bounces": 81
-    },
-    {
-      "clientId": 1,
-      "date": "2026-02-12",
-      "emailsSent": 4726,
-      "opens": 2097,
-      "replies": 570,
-      "bounces": 152
+      "id": "sub_003",
+      "partnerId": "partner_001",
+      "companyName": "GrowthLabs",
+      "status": "onboarding",
+      "instantlyApiKey": null,
+      "createdAt": "2026-02-15T18:19:03.409Z"
     }
   ],
-  "reports": [
+  "apiKeys": [
     {
-      "id": 1,
-      "clientId": 1,
-      "name": "Weekly Summary - Feb 5",
-      "type": "weekly",
-      "dateFrom": "2026-01-29",
-      "dateTo": "2026-02-05",
-      "createdAt": "2026-02-12T07:12:04.360Z"
-    },
-    {
-      "id": 2,
-      "clientId": 1,
-      "name": "Monthly Performance - Jan",
-      "type": "monthly",
-      "dateFrom": "2026-01-01",
-      "dateTo": "2026-01-31",
-      "createdAt": "2026-02-12T07:12:04.360Z"
-    },
-    {
-      "id": 3,
-      "clientId": 1,
-      "name": "Campaign Report - Cold Outreach",
-      "type": "campaign",
-      "dateFrom": "2026-01-15",
-      "dateTo": "2026-02-05",
-      "createdAt": "2026-02-12T07:12:04.360Z"
+      "id": "key_001",
+      "partnerId": "partner_001",
+      "apiKey": "pk_live_demo_sjsibfipfyn",
+      "webhookUrl": null,
+      "createdAt": "2026-02-15T18:19:03.409Z"
     }
-  ]
+  ],
+  "scheduledReports": [],
+  "activityLog": [],
+  "mockData": {
+    "metrics": {
+      "sub_001": [
+        {
+          "date": "2025-11-17",
+          "sent": 287,
+          "opens": 131,
+          "replies": 20,
+          "bounces": 7
+        },
+        {
+          "date": "2025-11-18",
+          "sent": 200,
+          "opens": 118,
+          "replies": 22,
+          "bounces": 5
+        },
+        {
+          "date": "2025-11-19",
+          "sent": 253,
+          "opens": 119,
+          "replies": 29,
+          "bounces": 4
+        },
+        {
+          "date": "2025-11-20",
+          "sent": 364,
+          "opens": 194,
+          "replies": 34,
+          "bounces": 8
+        },
+        {
+          "date": "2025-11-21",
+          "sent": 352,
+          "opens": 194,
+          "replies": 29,
+          "bounces": 4
+        },
+        {
+          "date": "2025-11-22",
+          "sent": 139,
+          "opens": 63,
+          "replies": 13,
+          "bounces": 1
+        },
+        {
+          "date": "2025-11-23",
+          "sent": 222,
+          "opens": 110,
+          "replies": 26,
+          "bounces": 5
+        },
+        {
+          "date": "2025-11-24",
+          "sent": 385,
+          "opens": 188,
+          "replies": 30,
+          "bounces": 4
+        },
+        {
+          "date": "2025-11-25",
+          "sent": 163,
+          "opens": 89,
+          "replies": 11,
+          "bounces": 4
+        },
+        {
+          "date": "2025-11-26",
+          "sent": 221,
+          "opens": 103,
+          "replies": 22,
+          "bounces": 4
+        },
+        {
+          "date": "2025-11-27",
+          "sent": 106,
+          "opens": 54,
+          "replies": 11,
+          "bounces": 1
+        },
+        {
+          "date": "2025-11-28",
+          "sent": 339,
+          "opens": 165,
+          "replies": 40,
+          "bounces": 8
+        },
+        {
+          "date": "2025-11-29",
+          "sent": 318,
+          "opens": 181,
+          "replies": 31,
+          "bounces": 9
+        },
+        {
+          "date": "2025-11-30",
+          "sent": 366,
+          "opens": 213,
+          "replies": 34,
+          "bounces": 8
+        },
+        {
+          "date": "2025-12-01",
+          "sent": 255,
+          "opens": 143,
+          "replies": 28,
+          "bounces": 7
+        },
+        {
+          "date": "2025-12-02",
+          "sent": 126,
+          "opens": 68,
+          "replies": 14,
+          "bounces": 1
+        },
+        {
+          "date": "2025-12-03",
+          "sent": 206,
+          "opens": 100,
+          "replies": 17,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-04",
+          "sent": 137,
+          "opens": 67,
+          "replies": 13,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-05",
+          "sent": 139,
+          "opens": 75,
+          "replies": 10,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-06",
+          "sent": 100,
+          "opens": 55,
+          "replies": 11,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-07",
+          "sent": 258,
+          "opens": 118,
+          "replies": 22,
+          "bounces": 4
+        },
+        {
+          "date": "2025-12-08",
+          "sent": 308,
+          "opens": 168,
+          "replies": 20,
+          "bounces": 8
+        },
+        {
+          "date": "2025-12-09",
+          "sent": 241,
+          "opens": 125,
+          "replies": 22,
+          "bounces": 4
+        },
+        {
+          "date": "2025-12-10",
+          "sent": 174,
+          "opens": 80,
+          "replies": 11,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-11",
+          "sent": 241,
+          "opens": 135,
+          "replies": 26,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-12",
+          "sent": 202,
+          "opens": 104,
+          "replies": 23,
+          "bounces": 4
+        },
+        {
+          "date": "2025-12-13",
+          "sent": 109,
+          "opens": 62,
+          "replies": 9,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-14",
+          "sent": 305,
+          "opens": 178,
+          "replies": 19,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-15",
+          "sent": 358,
+          "opens": 195,
+          "replies": 21,
+          "bounces": 4
+        },
+        {
+          "date": "2025-12-16",
+          "sent": 228,
+          "opens": 109,
+          "replies": 14,
+          "bounces": 5
+        },
+        {
+          "date": "2025-12-17",
+          "sent": 151,
+          "opens": 86,
+          "replies": 16,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-18",
+          "sent": 173,
+          "opens": 83,
+          "replies": 11,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-19",
+          "sent": 112,
+          "opens": 59,
+          "replies": 11,
+          "bounces": 1
+        },
+        {
+          "date": "2025-12-20",
+          "sent": 109,
+          "opens": 54,
+          "replies": 11,
+          "bounces": 1
+        },
+        {
+          "date": "2025-12-21",
+          "sent": 184,
+          "opens": 97,
+          "replies": 17,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-22",
+          "sent": 161,
+          "opens": 86,
+          "replies": 17,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-23",
+          "sent": 287,
+          "opens": 156,
+          "replies": 17,
+          "bounces": 5
+        },
+        {
+          "date": "2025-12-24",
+          "sent": 185,
+          "opens": 101,
+          "replies": 18,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-25",
+          "sent": 388,
+          "opens": 199,
+          "replies": 31,
+          "bounces": 10
+        },
+        {
+          "date": "2025-12-26",
+          "sent": 200,
+          "opens": 99,
+          "replies": 12,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-27",
+          "sent": 172,
+          "opens": 92,
+          "replies": 16,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-28",
+          "sent": 368,
+          "opens": 178,
+          "replies": 28,
+          "bounces": 10
+        },
+        {
+          "date": "2025-12-29",
+          "sent": 339,
+          "opens": 188,
+          "replies": 25,
+          "bounces": 6
+        },
+        {
+          "date": "2025-12-30",
+          "sent": 114,
+          "opens": 65,
+          "replies": 7,
+          "bounces": 1
+        },
+        {
+          "date": "2025-12-31",
+          "sent": 149,
+          "opens": 86,
+          "replies": 15,
+          "bounces": 4
+        },
+        {
+          "date": "2026-01-01",
+          "sent": 206,
+          "opens": 105,
+          "replies": 17,
+          "bounces": 5
+        },
+        {
+          "date": "2026-01-02",
+          "sent": 228,
+          "opens": 128,
+          "replies": 14,
+          "bounces": 4
+        },
+        {
+          "date": "2026-01-03",
+          "sent": 296,
+          "opens": 170,
+          "replies": 26,
+          "bounces": 5
+        },
+        {
+          "date": "2026-01-04",
+          "sent": 382,
+          "opens": 184,
+          "replies": 34,
+          "bounces": 9
+        },
+        {
+          "date": "2026-01-05",
+          "sent": 142,
+          "opens": 74,
+          "replies": 12,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-06",
+          "sent": 247,
+          "opens": 142,
+          "replies": 15,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-07",
+          "sent": 199,
+          "opens": 98,
+          "replies": 20,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-08",
+          "sent": 171,
+          "opens": 84,
+          "replies": 12,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-09",
+          "sent": 399,
+          "opens": 229,
+          "replies": 35,
+          "bounces": 6
+        },
+        {
+          "date": "2026-01-10",
+          "sent": 285,
+          "opens": 168,
+          "replies": 24,
+          "bounces": 6
+        },
+        {
+          "date": "2026-01-11",
+          "sent": 213,
+          "opens": 112,
+          "replies": 22,
+          "bounces": 5
+        },
+        {
+          "date": "2026-01-12",
+          "sent": 144,
+          "opens": 66,
+          "replies": 9,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-13",
+          "sent": 306,
+          "opens": 141,
+          "replies": 24,
+          "bounces": 7
+        },
+        {
+          "date": "2026-01-14",
+          "sent": 141,
+          "opens": 68,
+          "replies": 9,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-15",
+          "sent": 175,
+          "opens": 97,
+          "replies": 12,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-16",
+          "sent": 170,
+          "opens": 84,
+          "replies": 16,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-17",
+          "sent": 150,
+          "opens": 72,
+          "replies": 14,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-18",
+          "sent": 395,
+          "opens": 221,
+          "replies": 38,
+          "bounces": 7
+        },
+        {
+          "date": "2026-01-19",
+          "sent": 320,
+          "opens": 170,
+          "replies": 25,
+          "bounces": 4
+        },
+        {
+          "date": "2026-01-20",
+          "sent": 351,
+          "opens": 174,
+          "replies": 27,
+          "bounces": 7
+        },
+        {
+          "date": "2026-01-21",
+          "sent": 190,
+          "opens": 86,
+          "replies": 22,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-22",
+          "sent": 141,
+          "opens": 79,
+          "replies": 11,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-23",
+          "sent": 357,
+          "opens": 188,
+          "replies": 27,
+          "bounces": 4
+        },
+        {
+          "date": "2026-01-24",
+          "sent": 134,
+          "opens": 70,
+          "replies": 9,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-25",
+          "sent": 225,
+          "opens": 101,
+          "replies": 20,
+          "bounces": 6
+        },
+        {
+          "date": "2026-01-26",
+          "sent": 252,
+          "opens": 115,
+          "replies": 29,
+          "bounces": 7
+        },
+        {
+          "date": "2026-01-27",
+          "sent": 284,
+          "opens": 161,
+          "replies": 31,
+          "bounces": 8
+        },
+        {
+          "date": "2026-01-28",
+          "sent": 301,
+          "opens": 148,
+          "replies": 21,
+          "bounces": 4
+        },
+        {
+          "date": "2026-01-29",
+          "sent": 259,
+          "opens": 144,
+          "replies": 29,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-30",
+          "sent": 316,
+          "opens": 165,
+          "replies": 28,
+          "bounces": 6
+        },
+        {
+          "date": "2026-01-31",
+          "sent": 108,
+          "opens": 56,
+          "replies": 10,
+          "bounces": 2
+        },
+        {
+          "date": "2026-02-01",
+          "sent": 276,
+          "opens": 142,
+          "replies": 33,
+          "bounces": 6
+        },
+        {
+          "date": "2026-02-02",
+          "sent": 150,
+          "opens": 72,
+          "replies": 11,
+          "bounces": 3
+        },
+        {
+          "date": "2026-02-03",
+          "sent": 182,
+          "opens": 87,
+          "replies": 18,
+          "bounces": 4
+        },
+        {
+          "date": "2026-02-04",
+          "sent": 243,
+          "opens": 133,
+          "replies": 22,
+          "bounces": 6
+        },
+        {
+          "date": "2026-02-05",
+          "sent": 390,
+          "opens": 225,
+          "replies": 29,
+          "bounces": 6
+        },
+        {
+          "date": "2026-02-06",
+          "sent": 186,
+          "opens": 94,
+          "replies": 13,
+          "bounces": 3
+        },
+        {
+          "date": "2026-02-07",
+          "sent": 358,
+          "opens": 195,
+          "replies": 33,
+          "bounces": 6
+        },
+        {
+          "date": "2026-02-08",
+          "sent": 393,
+          "opens": 179,
+          "replies": 26,
+          "bounces": 7
+        },
+        {
+          "date": "2026-02-09",
+          "sent": 125,
+          "opens": 74,
+          "replies": 9,
+          "bounces": 3
+        },
+        {
+          "date": "2026-02-10",
+          "sent": 221,
+          "opens": 113,
+          "replies": 19,
+          "bounces": 2
+        },
+        {
+          "date": "2026-02-11",
+          "sent": 135,
+          "opens": 70,
+          "replies": 9,
+          "bounces": 3
+        },
+        {
+          "date": "2026-02-12",
+          "sent": 280,
+          "opens": 154,
+          "replies": 28,
+          "bounces": 5
+        },
+        {
+          "date": "2026-02-13",
+          "sent": 299,
+          "opens": 145,
+          "replies": 29,
+          "bounces": 4
+        },
+        {
+          "date": "2026-02-14",
+          "sent": 267,
+          "opens": 144,
+          "replies": 21,
+          "bounces": 4
+        },
+        {
+          "date": "2026-02-15",
+          "sent": 127,
+          "opens": 75,
+          "replies": 7,
+          "bounces": 3
+        }
+      ],
+      "sub_002": [
+        {
+          "date": "2025-11-17",
+          "sent": 136,
+          "opens": 80,
+          "replies": 13,
+          "bounces": 3
+        },
+        {
+          "date": "2025-11-18",
+          "sent": 305,
+          "opens": 160,
+          "replies": 28,
+          "bounces": 5
+        },
+        {
+          "date": "2025-11-19",
+          "sent": 350,
+          "opens": 180,
+          "replies": 41,
+          "bounces": 8
+        },
+        {
+          "date": "2025-11-20",
+          "sent": 123,
+          "opens": 55,
+          "replies": 7,
+          "bounces": 2
+        },
+        {
+          "date": "2025-11-21",
+          "sent": 198,
+          "opens": 114,
+          "replies": 15,
+          "bounces": 2
+        },
+        {
+          "date": "2025-11-22",
+          "sent": 301,
+          "opens": 160,
+          "replies": 29,
+          "bounces": 5
+        },
+        {
+          "date": "2025-11-23",
+          "sent": 156,
+          "opens": 74,
+          "replies": 14,
+          "bounces": 3
+        },
+        {
+          "date": "2025-11-24",
+          "sent": 183,
+          "opens": 97,
+          "replies": 16,
+          "bounces": 2
+        },
+        {
+          "date": "2025-11-25",
+          "sent": 190,
+          "opens": 93,
+          "replies": 14,
+          "bounces": 4
+        },
+        {
+          "date": "2025-11-26",
+          "sent": 196,
+          "opens": 106,
+          "replies": 17,
+          "bounces": 4
+        },
+        {
+          "date": "2025-11-27",
+          "sent": 144,
+          "opens": 78,
+          "replies": 9,
+          "bounces": 3
+        },
+        {
+          "date": "2025-11-28",
+          "sent": 240,
+          "opens": 126,
+          "replies": 15,
+          "bounces": 4
+        },
+        {
+          "date": "2025-11-29",
+          "sent": 376,
+          "opens": 172,
+          "replies": 33,
+          "bounces": 6
+        },
+        {
+          "date": "2025-11-30",
+          "sent": 231,
+          "opens": 111,
+          "replies": 14,
+          "bounces": 6
+        },
+        {
+          "date": "2025-12-01",
+          "sent": 256,
+          "opens": 139,
+          "replies": 20,
+          "bounces": 5
+        },
+        {
+          "date": "2025-12-02",
+          "sent": 338,
+          "opens": 176,
+          "replies": 37,
+          "bounces": 4
+        },
+        {
+          "date": "2025-12-03",
+          "sent": 129,
+          "opens": 76,
+          "replies": 13,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-04",
+          "sent": 135,
+          "opens": 79,
+          "replies": 8,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-05",
+          "sent": 348,
+          "opens": 158,
+          "replies": 32,
+          "bounces": 9
+        },
+        {
+          "date": "2025-12-06",
+          "sent": 355,
+          "opens": 200,
+          "replies": 28,
+          "bounces": 7
+        },
+        {
+          "date": "2025-12-07",
+          "sent": 130,
+          "opens": 63,
+          "replies": 15,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-08",
+          "sent": 337,
+          "opens": 190,
+          "replies": 31,
+          "bounces": 9
+        },
+        {
+          "date": "2025-12-09",
+          "sent": 340,
+          "opens": 176,
+          "replies": 27,
+          "bounces": 9
+        },
+        {
+          "date": "2025-12-10",
+          "sent": 143,
+          "opens": 65,
+          "replies": 15,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-11",
+          "sent": 137,
+          "opens": 63,
+          "replies": 14,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-12",
+          "sent": 328,
+          "opens": 161,
+          "replies": 21,
+          "bounces": 8
+        },
+        {
+          "date": "2025-12-13",
+          "sent": 283,
+          "opens": 156,
+          "replies": 25,
+          "bounces": 4
+        },
+        {
+          "date": "2025-12-14",
+          "sent": 185,
+          "opens": 109,
+          "replies": 14,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-15",
+          "sent": 101,
+          "opens": 48,
+          "replies": 10,
+          "bounces": 1
+        },
+        {
+          "date": "2025-12-16",
+          "sent": 287,
+          "opens": 160,
+          "replies": 29,
+          "bounces": 5
+        },
+        {
+          "date": "2025-12-17",
+          "sent": 189,
+          "opens": 93,
+          "replies": 16,
+          "bounces": 4
+        },
+        {
+          "date": "2025-12-18",
+          "sent": 165,
+          "opens": 91,
+          "replies": 15,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-19",
+          "sent": 295,
+          "opens": 135,
+          "replies": 24,
+          "bounces": 5
+        },
+        {
+          "date": "2025-12-20",
+          "sent": 242,
+          "opens": 127,
+          "replies": 16,
+          "bounces": 4
+        },
+        {
+          "date": "2025-12-21",
+          "sent": 118,
+          "opens": 61,
+          "replies": 9,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-22",
+          "sent": 150,
+          "opens": 89,
+          "replies": 12,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-23",
+          "sent": 189,
+          "opens": 98,
+          "replies": 14,
+          "bounces": 1
+        },
+        {
+          "date": "2025-12-24",
+          "sent": 398,
+          "opens": 190,
+          "replies": 30,
+          "bounces": 11
+        },
+        {
+          "date": "2025-12-25",
+          "sent": 113,
+          "opens": 59,
+          "replies": 10,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-26",
+          "sent": 246,
+          "opens": 128,
+          "replies": 24,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-27",
+          "sent": 154,
+          "opens": 83,
+          "replies": 9,
+          "bounces": 3
+        },
+        {
+          "date": "2025-12-28",
+          "sent": 196,
+          "opens": 106,
+          "replies": 20,
+          "bounces": 4
+        },
+        {
+          "date": "2025-12-29",
+          "sent": 304,
+          "opens": 174,
+          "replies": 33,
+          "bounces": 8
+        },
+        {
+          "date": "2025-12-30",
+          "sent": 245,
+          "opens": 114,
+          "replies": 14,
+          "bounces": 2
+        },
+        {
+          "date": "2025-12-31",
+          "sent": 279,
+          "opens": 145,
+          "replies": 17,
+          "bounces": 5
+        },
+        {
+          "date": "2026-01-01",
+          "sent": 198,
+          "opens": 116,
+          "replies": 13,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-02",
+          "sent": 220,
+          "opens": 108,
+          "replies": 13,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-03",
+          "sent": 326,
+          "opens": 163,
+          "replies": 30,
+          "bounces": 8
+        },
+        {
+          "date": "2026-01-04",
+          "sent": 286,
+          "opens": 164,
+          "replies": 25,
+          "bounces": 7
+        },
+        {
+          "date": "2026-01-05",
+          "sent": 163,
+          "opens": 90,
+          "replies": 19,
+          "bounces": 4
+        },
+        {
+          "date": "2026-01-06",
+          "sent": 348,
+          "opens": 184,
+          "replies": 36,
+          "bounces": 8
+        },
+        {
+          "date": "2026-01-07",
+          "sent": 108,
+          "opens": 56,
+          "replies": 12,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-08",
+          "sent": 368,
+          "opens": 210,
+          "replies": 27,
+          "bounces": 10
+        },
+        {
+          "date": "2026-01-09",
+          "sent": 320,
+          "opens": 155,
+          "replies": 31,
+          "bounces": 5
+        },
+        {
+          "date": "2026-01-10",
+          "sent": 399,
+          "opens": 232,
+          "replies": 37,
+          "bounces": 11
+        },
+        {
+          "date": "2026-01-11",
+          "sent": 274,
+          "opens": 159,
+          "replies": 26,
+          "bounces": 6
+        },
+        {
+          "date": "2026-01-12",
+          "sent": 132,
+          "opens": 67,
+          "replies": 9,
+          "bounces": 1
+        },
+        {
+          "date": "2026-01-13",
+          "sent": 329,
+          "opens": 156,
+          "replies": 30,
+          "bounces": 5
+        },
+        {
+          "date": "2026-01-14",
+          "sent": 223,
+          "opens": 122,
+          "replies": 26,
+          "bounces": 5
+        },
+        {
+          "date": "2026-01-15",
+          "sent": 347,
+          "opens": 188,
+          "replies": 34,
+          "bounces": 4
+        },
+        {
+          "date": "2026-01-16",
+          "sent": 153,
+          "opens": 74,
+          "replies": 11,
+          "bounces": 1
+        },
+        {
+          "date": "2026-01-17",
+          "sent": 147,
+          "opens": 81,
+          "replies": 9,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-18",
+          "sent": 301,
+          "opens": 151,
+          "replies": 31,
+          "bounces": 7
+        },
+        {
+          "date": "2026-01-19",
+          "sent": 397,
+          "opens": 204,
+          "replies": 45,
+          "bounces": 4
+        },
+        {
+          "date": "2026-01-20",
+          "sent": 193,
+          "opens": 97,
+          "replies": 21,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-21",
+          "sent": 395,
+          "opens": 225,
+          "replies": 28,
+          "bounces": 9
+        },
+        {
+          "date": "2026-01-22",
+          "sent": 153,
+          "opens": 82,
+          "replies": 12,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-23",
+          "sent": 351,
+          "opens": 176,
+          "replies": 34,
+          "bounces": 8
+        },
+        {
+          "date": "2026-01-24",
+          "sent": 263,
+          "opens": 132,
+          "replies": 19,
+          "bounces": 3
+        },
+        {
+          "date": "2026-01-25",
+          "sent": 312,
+          "opens": 180,
+          "replies": 28,
+          "bounces": 9
+        },
+        {
+          "date": "2026-01-26",
+          "sent": 302,
+          "opens": 136,
+          "replies": 32,
+          "bounces": 6
+        },
+        {
+          "date": "2026-01-27",
+          "sent": 258,
+          "opens": 132,
+          "replies": 21,
+          "bounces": 7
+        },
+        {
+          "date": "2026-01-28",
+          "sent": 246,
+          "opens": 134,
+          "replies": 17,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-29",
+          "sent": 363,
+          "opens": 191,
+          "replies": 31,
+          "bounces": 7
+        },
+        {
+          "date": "2026-01-30",
+          "sent": 100,
+          "opens": 51,
+          "replies": 11,
+          "bounces": 2
+        },
+        {
+          "date": "2026-01-31",
+          "sent": 301,
+          "opens": 180,
+          "replies": 28,
+          "bounces": 6
+        },
+        {
+          "date": "2026-02-01",
+          "sent": 381,
+          "opens": 212,
+          "replies": 36,
+          "bounces": 5
+        },
+        {
+          "date": "2026-02-02",
+          "sent": 206,
+          "opens": 103,
+          "replies": 23,
+          "bounces": 2
+        },
+        {
+          "date": "2026-02-03",
+          "sent": 158,
+          "opens": 92,
+          "replies": 12,
+          "bounces": 2
+        },
+        {
+          "date": "2026-02-04",
+          "sent": 344,
+          "opens": 192,
+          "replies": 27,
+          "bounces": 8
+        },
+        {
+          "date": "2026-02-05",
+          "sent": 229,
+          "opens": 105,
+          "replies": 23,
+          "bounces": 6
+        },
+        {
+          "date": "2026-02-06",
+          "sent": 297,
+          "opens": 146,
+          "replies": 35,
+          "bounces": 4
+        },
+        {
+          "date": "2026-02-07",
+          "sent": 302,
+          "opens": 142,
+          "replies": 21,
+          "bounces": 8
+        },
+        {
+          "date": "2026-02-08",
+          "sent": 247,
+          "opens": 129,
+          "replies": 26,
+          "bounces": 3
+        },
+        {
+          "date": "2026-02-09",
+          "sent": 396,
+          "opens": 234,
+          "replies": 40,
+          "bounces": 4
+        },
+        {
+          "date": "2026-02-10",
+          "sent": 380,
+          "opens": 204,
+          "replies": 44,
+          "bounces": 6
+        },
+        {
+          "date": "2026-02-11",
+          "sent": 231,
+          "opens": 116,
+          "replies": 26,
+          "bounces": 5
+        },
+        {
+          "date": "2026-02-12",
+          "sent": 166,
+          "opens": 76,
+          "replies": 18,
+          "bounces": 4
+        },
+        {
+          "date": "2026-02-13",
+          "sent": 283,
+          "opens": 141,
+          "replies": 25,
+          "bounces": 4
+        },
+        {
+          "date": "2026-02-14",
+          "sent": 138,
+          "opens": 79,
+          "replies": 10,
+          "bounces": 2
+        },
+        {
+          "date": "2026-02-15",
+          "sent": 139,
+          "opens": 66,
+          "replies": 15,
+          "bounces": 3
+        }
+      ],
+      "sub_003": [
+        {
+          "date": "2025-11-17",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-18",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-19",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-20",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-21",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-22",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-23",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-24",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-25",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-26",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-27",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-28",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-29",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-11-30",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-01",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-02",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-03",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-04",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-05",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-06",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-07",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-08",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-09",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-10",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-11",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-12",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-13",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-14",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-15",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-16",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-17",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-18",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-19",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-20",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-21",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-22",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-23",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-24",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-25",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-26",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-27",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-28",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-29",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-30",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2025-12-31",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-01",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-02",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-03",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-04",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-05",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-06",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-07",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-08",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-09",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-10",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-11",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-12",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-13",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-14",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-15",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-16",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-17",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-18",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-19",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-20",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-21",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-22",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-23",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-24",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-25",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-26",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-27",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-28",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-29",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-30",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-01-31",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-01",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-02",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-03",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-04",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-05",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-06",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-07",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-08",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-09",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-10",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-11",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-12",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-13",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-14",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        },
+        {
+          "date": "2026-02-15",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "bounces": 0
+        }
+      ]
+    },
+    "campaigns": {
+      "sub_001": [
+        {
+          "id": "camp_sub_001_0",
+          "name": "Q1 SaaS Outreach",
+          "status": "active",
+          "sent": 2377,
+          "opens": 1236,
+          "replies": 213,
+          "startDate": "2026-01-16"
+        },
+        {
+          "id": "camp_sub_001_1",
+          "name": "Product Launch Beta",
+          "status": "active",
+          "sent": 2318,
+          "opens": 1205,
+          "replies": 208,
+          "startDate": "2026-01-01"
+        },
+        {
+          "id": "camp_sub_001_2",
+          "name": "Enterprise ABM",
+          "status": "paused",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "startDate": "2025-12-17"
+        }
+      ],
+      "sub_002": [
+        {
+          "id": "camp_sub_002_0",
+          "name": "Cold Email - Tech",
+          "status": "active",
+          "sent": 1466,
+          "opens": 762,
+          "replies": 131,
+          "startDate": "2026-01-16"
+        },
+        {
+          "id": "camp_sub_002_1",
+          "name": "Follow-up Sequence",
+          "status": "active",
+          "sent": 2452,
+          "opens": 1275,
+          "replies": 220,
+          "startDate": "2026-01-01"
+        },
+        {
+          "id": "camp_sub_002_2",
+          "name": "Re-engagement",
+          "status": "paused",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "startDate": "2025-12-17"
+        }
+      ],
+      "sub_003": [
+        {
+          "id": "camp_sub_003_0",
+          "name": "Onboarding Campaign",
+          "status": "paused",
+          "sent": 0,
+          "opens": 0,
+          "replies": 0,
+          "startDate": "2026-01-16"
+        }
+      ]
+    }
+  }
 }

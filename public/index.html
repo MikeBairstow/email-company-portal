@@ -27,11 +27,7 @@
       --gradient: linear-gradient(135deg, #7C50F9 0%, #5E35D8 100%);
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -46,7 +42,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--bg-primary);
     }
     
     .login-box {
@@ -100,15 +95,13 @@
       transition: border-color 0.2s, box-shadow 0.2s;
     }
     
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    .form-group input:focus, .form-group select:focus {
       outline: none;
       border-color: var(--purple);
       box-shadow: 0 0 0 3px rgba(124, 80, 249, 0.15);
     }
     
-    .form-group input::placeholder {
-      color: var(--text-muted);
-    }
+    .form-group input::placeholder { color: var(--text-muted); }
     
     .btn {
       display: inline-flex;
@@ -140,12 +133,13 @@
       border: 1px solid var(--border);
     }
     
-    .btn-secondary:hover {
-      background: var(--border);
-    }
+    .btn-secondary:hover { background: var(--border); }
     
-    .btn-full {
-      width: 100%;
+    .btn-full { width: 100%; }
+    
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 13px;
     }
     
     .forgot-link {
@@ -155,10 +149,6 @@
       color: var(--purple-light);
       text-decoration: none;
       font-size: 14px;
-    }
-    
-    .forgot-link:hover {
-      text-decoration: underline;
     }
     
     .login-error {
@@ -206,9 +196,7 @@
       background-clip: text;
     }
     
-    .sidebar-nav {
-      flex: 1;
-    }
+    .sidebar-nav { flex: 1; }
     
     .nav-item {
       display: flex;
@@ -233,10 +221,7 @@
       color: var(--purple-light);
     }
     
-    .nav-item svg {
-      width: 20px;
-      height: 20px;
-    }
+    .nav-item svg { width: 20px; height: 20px; }
     
     .sidebar-footer {
       padding-top: 16px;
@@ -259,13 +244,9 @@
       align-items: center;
       justify-content: center;
       font-weight: 600;
-      font-size: 16px;
     }
     
-    .user-details {
-      flex: 1;
-      min-width: 0;
-    }
+    .user-details { flex: 1; min-width: 0; }
     
     .user-name {
       font-weight: 600;
@@ -296,10 +277,7 @@
       margin-bottom: 32px;
     }
     
-    .page-title {
-      font-size: 28px;
-      font-weight: 700;
-    }
+    .page-title { font-size: 28px; font-weight: 700; }
     
     .welcome-text {
       color: var(--text-secondary);
@@ -328,18 +306,9 @@
       margin-bottom: 8px;
     }
     
-    .kpi-value {
-      font-size: 32px;
-      font-weight: 700;
-    }
-    
-    .kpi-value.purple {
-      color: var(--purple-light);
-    }
-    
-    .kpi-value.success {
-      color: var(--success);
-    }
+    .kpi-value { font-size: 32px; font-weight: 700; }
+    .kpi-value.purple { color: var(--purple-light); }
+    .kpi-value.success { color: var(--success); }
     
     /* Charts */
     .chart-card {
@@ -357,83 +326,21 @@
       margin-bottom: 24px;
     }
     
-    .chart-title {
-      font-size: 18px;
-      font-weight: 600;
-    }
+    .chart-title { font-size: 18px; font-weight: 600; }
     
-    .chart-container {
-      height: 300px;
-      position: relative;
-    }
+    .chart-container { height: 300px; position: relative; }
     
-    /* Activity Feed */
-    .activity-list {
-      list-style: none;
-    }
+    /* Sub-accounts Cards (on Dashboard) */
+    .sub-accounts-section { margin-top: 32px; }
     
-    .activity-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    
-    .activity-item:last-child {
-      border-bottom: none;
-    }
-    
-    .activity-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(124, 80, 249, 0.15);
-      border-radius: 10px;
+    .section-header {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: var(--purple-light);
-      flex-shrink: 0;
+      justify-content: space-between;
+      margin-bottom: 20px;
     }
     
-    .activity-content {
-      flex: 1;
-    }
-    
-    .activity-text {
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-    
-    .activity-text strong {
-      color: var(--text-primary);
-    }
-    
-    .activity-time {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-    
-    /* Sub-accounts */
-    .filter-bar {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    
-    .filter-bar select, .filter-bar input {
-      padding: 10px 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text-primary);
-      font-size: 14px;
-    }
-    
-    .filter-bar input {
-      flex: 1;
-      max-width: 300px;
-    }
+    .section-title { font-size: 18px; font-weight: 600; }
     
     .sub-accounts-grid {
       display: grid;
@@ -447,11 +354,10 @@
       border-radius: 12px;
       padding: 24px;
       transition: border-color 0.2s;
+      cursor: pointer;
     }
     
-    .sub-account-card:hover {
-      border-color: var(--purple);
-    }
+    .sub-account-card:hover { border-color: var(--purple); }
     
     .sub-account-header {
       display: flex;
@@ -460,10 +366,7 @@
       margin-bottom: 16px;
     }
     
-    .sub-account-name {
-      font-size: 18px;
-      font-weight: 600;
-    }
+    .sub-account-name { font-size: 18px; font-weight: 600; }
     
     .status-badge {
       padding: 4px 12px;
@@ -492,22 +395,11 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin-bottom: 16px;
     }
     
-    .sub-stat {
-      text-align: center;
-    }
-    
-    .sub-stat-value {
-      font-size: 20px;
-      font-weight: 600;
-    }
-    
-    .sub-stat-label {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+    .sub-stat { text-align: center; }
+    .sub-stat-value { font-size: 20px; font-weight: 600; }
+    .sub-stat-label { font-size: 12px; color: var(--text-muted); }
     
     /* Detail Page */
     .back-link {
@@ -521,9 +413,7 @@
       cursor: pointer;
     }
     
-    .back-link:hover {
-      color: var(--text-primary);
-    }
+    .back-link:hover { color: var(--text-primary); }
     
     .detail-header {
       display: flex;
@@ -561,63 +451,162 @@
       font-size: 14px;
     }
     
-    .data-table tbody tr:hover {
-      background: var(--bg-hover);
+    .data-table tbody tr:hover { background: var(--bg-hover); }
+    
+    /* Reports Page - Updated Layout */
+    .reports-layout {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 32px;
     }
     
-    /* Reports Page */
     .report-form {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 32px;
-      max-width: 600px;
+      padding: 24px;
+    }
+    
+    .report-form h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
     }
     
     .form-row {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 12px;
     }
     
     .checkbox-group {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 150px;
+      overflow-y: auto;
     }
     
     .checkbox-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
+      gap: 10px;
+      padding: 10px 12px;
       background: var(--bg-secondary);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       transition: all 0.2s;
+      font-size: 14px;
     }
     
-    .checkbox-item:hover {
-      border-color: var(--purple);
-    }
-    
+    .checkbox-item:hover { border-color: var(--purple); }
     .checkbox-item.selected {
       background: rgba(124, 80, 249, 0.15);
       border-color: var(--purple);
     }
     
-    .checkbox-item input {
-      display: none;
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--purple);
     }
     
     .btn-group {
       display: flex;
       gap: 12px;
-      margin-top: 24px;
+      margin-top: 20px;
     }
     
-    /* Settings Page */
+    .report-preview {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .preview-header h3 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .download-options {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .preview-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      color: var(--text-muted);
+    }
+    
+    .preview-placeholder {
+      text-align: center;
+    }
+    
+    .preview-placeholder svg {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+    
+    /* Settings Page - Tabbed Layout */
+    .settings-tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+    
+    .settings-tab {
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all 0.2s;
+    }
+    
+    .settings-tab:hover { color: var(--text-primary); }
+    
+    .settings-tab.active {
+      color: var(--purple-light);
+      border-bottom-color: var(--purple);
+    }
+    
+    .settings-panel {
+      display: none;
+    }
+    
+    .settings-panel.active {
+      display: block;
+    }
+    
     .settings-section {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -626,11 +615,13 @@
       margin-bottom: 24px;
     }
     
+    .settings-section:last-child { margin-bottom: 0; }
+    
     .settings-section-title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
       margin-bottom: 20px;
-      padding-bottom: 16px;
+      padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
     }
     
@@ -642,13 +633,9 @@
       border-bottom: 1px solid var(--border);
     }
     
-    .settings-row:last-child {
-      border-bottom: none;
-    }
+    .settings-row:last-child { border-bottom: none; }
     
-    .settings-label {
-      font-size: 14px;
-    }
+    .settings-label { font-size: 14px; }
     
     .settings-description {
       font-size: 12px;
@@ -663,19 +650,12 @@
       height: 26px;
     }
     
-    .toggle input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
+    .toggle input { opacity: 0; width: 0; height: 0; }
     
     .toggle-slider {
       position: absolute;
       cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: var(--bg-hover);
       border-radius: 26px;
       transition: 0.3s;
@@ -693,54 +673,50 @@
       transition: 0.3s;
     }
     
-    .toggle input:checked + .toggle-slider {
-      background: var(--purple);
-    }
+    .toggle input:checked + .toggle-slider { background: var(--purple); }
+    .toggle input:checked + .toggle-slider:before { transform: translateX(22px); }
     
-    .toggle input:checked + .toggle-slider:before {
-      transform: translateX(22px);
-    }
-    
-    /* Team Members */
-    .team-list {
+    /* Team Members Table */
+    .team-table {
+      width: 100%;
+      border-collapse: collapse;
       margin-top: 16px;
     }
     
-    .team-member {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .team-table th {
+      text-align: left;
       padding: 12px;
-      background: var(--bg-secondary);
-      border-radius: 8px;
-      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
     }
     
-    .team-member-info {
+    .team-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    
+    .team-table tbody tr:hover { background: var(--bg-hover); }
+    
+    .team-member-cell {
       display: flex;
       align-items: center;
       gap: 12px;
     }
     
-    .team-member-avatar {
-      width: 36px;
-      height: 36px;
+    .team-avatar {
+      width: 32px;
+      height: 32px;
       background: var(--gradient);
-      border-radius: 8px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 600;
-      font-size: 14px;
-    }
-    
-    .team-member-name {
-      font-weight: 500;
-    }
-    
-    .team-member-email {
       font-size: 12px;
-      color: var(--text-muted);
     }
     
     .role-badge {
@@ -749,9 +725,26 @@
       border-radius: 4px;
       font-size: 12px;
       color: var(--text-secondary);
+      text-transform: capitalize;
     }
     
-    /* API Key */
+    .action-btn {
+      padding: 6px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .action-btn:hover {
+      background: var(--bg-hover);
+      color: var(--text-primary);
+    }
+    
+    .action-btn.danger:hover { color: var(--error); }
+    
+    /* API Key Display */
     .api-key-display {
       display: flex;
       align-items: center;
@@ -810,19 +803,14 @@
     .modal-overlay {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.7);
       z-index: 1000;
       align-items: center;
       justify-content: center;
     }
     
-    .modal-overlay.active {
-      display: flex;
-    }
+    .modal-overlay.active { display: flex; }
     
     .modal {
       background: var(--bg-card);
@@ -840,10 +828,7 @@
       margin-bottom: 24px;
     }
     
-    .modal-title {
-      font-size: 20px;
-      font-weight: 600;
-    }
+    .modal-title { font-size: 20px; font-weight: 600; }
     
     .modal-close {
       background: none;
@@ -853,43 +838,22 @@
       padding: 4px;
     }
     
-    .modal-close:hover {
-      color: var(--text-primary);
-    }
+    .modal-close:hover { color: var(--text-primary); }
     
     /* Responsive */
     @media (max-width: 1200px) {
-      .kpi-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .reports-layout { grid-template-columns: 1fr; }
     }
     
     @media (max-width: 768px) {
-      .sidebar {
-        display: none;
-      }
-      
-      .main-content {
-        margin-left: 0;
-      }
-      
-      .kpi-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .form-row {
-        grid-template-columns: 1fr;
-      }
+      .sidebar { display: none; }
+      .main-content { margin-left: 0; }
+      .kpi-grid { grid-template-columns: 1fr; }
     }
     
-    /* Hidden pages */
-    .page {
-      display: none;
-    }
-    
-    .page.active {
-      display: block;
-    }
+    .page { display: none; }
+    .page.active { display: block; }
   </style>
 </head>
 <body>
@@ -932,15 +896,6 @@
             <rect x="14" y="14" width="7" height="7" rx="1"/>
           </svg>
           Dashboard
-        </a>
-        <a class="nav-item" data-page="sub-accounts">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-          Sub-accounts
         </a>
         <a class="nav-item" data-page="reports">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1018,52 +973,32 @@
           </div>
         </div>
         
-        <div class="chart-card">
-          <h3 class="chart-title" style="margin-bottom: 16px;">Recent Activity</h3>
-          <ul class="activity-list" id="activityList">
-            <!-- Populated by JS -->
-          </ul>
-        </div>
-      </div>
-
-      <!-- Sub-accounts Page -->
-      <div id="subAccountsPage" class="page">
-        <div class="page-header">
-          <div>
-            <h1 class="page-title">Sub-accounts</h1>
+        <!-- Sub-accounts Section (moved from separate page) -->
+        <div class="sub-accounts-section">
+          <div class="section-header">
+            <h3 class="section-title">Sub-accounts</h3>
+            <button class="btn btn-primary btn-sm" onclick="openAddClientModal()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              Add Client
+            </button>
           </div>
-          <button class="btn btn-primary" onclick="openAddClientModal()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/>
-              <line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Add New Client
-          </button>
-        </div>
-        
-        <div class="filter-bar">
-          <select id="statusFilter" onchange="loadSubAccounts()">
-            <option value="all">All Status</option>
-            <option value="active">Active</option>
-            <option value="paused">Paused</option>
-            <option value="onboarding">Onboarding</option>
-          </select>
-          <input type="text" id="searchFilter" placeholder="Search clients..." oninput="loadSubAccounts()">
-        </div>
-        
-        <div class="sub-accounts-grid" id="subAccountsGrid">
-          <!-- Populated by JS -->
+          <div class="sub-accounts-grid" id="subAccountsGrid">
+            <!-- Populated by JS -->
+          </div>
         </div>
       </div>
 
       <!-- Sub-account Detail Page -->
       <div id="subAccountDetailPage" class="page">
-        <a class="back-link" onclick="showPage('sub-accounts')">
+        <a class="back-link" onclick="showPage('dashboard')">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 12H5"/>
             <path d="M12 19l-7-7 7-7"/>
           </svg>
-          Back to Sub-accounts
+          Back to Dashboard
         </a>
         
         <div class="detail-header">
@@ -1122,180 +1057,218 @@
                 <th>Start Date</th>
               </tr>
             </thead>
-            <tbody id="campaignsTable">
-              <!-- Populated by JS -->
-            </tbody>
+            <tbody id="campaignsTable"></tbody>
           </table>
         </div>
       </div>
 
-      <!-- Reports Page -->
+      <!-- Reports Page - Updated Layout -->
       <div id="reportsPage" class="page">
         <div class="page-header">
           <h1 class="page-title">Reports & Export</h1>
         </div>
         
-        <div class="report-form">
-          <div class="form-group">
-            <label>Report Type</label>
-            <select id="reportType">
-              <option value="monthly_summary">Monthly Summary</option>
-              <option value="campaign_performance">Campaign Performance</option>
-              <option value="client_overview">Client Overview</option>
-            </select>
-          </div>
-          
-          <div class="form-row">
+        <div class="reports-layout">
+          <div class="report-form">
+            <h3>Generate Report</h3>
             <div class="form-group">
-              <label>From Date</label>
-              <input type="date" id="reportFrom">
+              <label>Report Type</label>
+              <select id="reportType">
+                <option value="monthly_summary">Monthly Summary</option>
+                <option value="campaign_performance">Campaign Performance</option>
+                <option value="client_overview">Client Overview</option>
+              </select>
             </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label>From</label>
+                <input type="date" id="reportFrom">
+              </div>
+              <div class="form-group">
+                <label>To</label>
+                <input type="date" id="reportTo">
+              </div>
+            </div>
+            
             <div class="form-group">
-              <label>To Date</label>
-              <input type="date" id="reportTo">
+              <label>Sub-accounts</label>
+              <div class="checkbox-group" id="reportSubAccounts"></div>
+            </div>
+            
+            <div class="btn-group">
+              <button class="btn btn-primary" onclick="generateReport()">Generate Report</button>
+              <button class="btn btn-secondary" onclick="scheduleReport()">Schedule</button>
             </div>
           </div>
           
-          <div class="form-group">
-            <label>Sub-accounts</label>
-            <div class="checkbox-group" id="reportSubAccounts">
-              <!-- Populated by JS -->
+          <div class="report-preview">
+            <div class="preview-header">
+              <h3>Report Preview</h3>
+              <div class="download-options" id="downloadOptions" style="display: none;">
+                <button class="btn btn-sm btn-secondary" onclick="downloadReport('pdf')">PDF</button>
+                <button class="btn btn-sm btn-secondary" onclick="downloadReport('csv')">CSV</button>
+                <button class="btn btn-sm btn-secondary" onclick="downloadReport('excel')">Excel</button>
+              </div>
             </div>
-          </div>
-          
-          <div class="btn-group">
-            <button class="btn btn-primary" onclick="generateReport()">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <path d="M14 2v6h6"/>
-              </svg>
-              Generate Report
-            </button>
-            <button class="btn btn-secondary" onclick="scheduleReport()">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              Schedule Report
-            </button>
+            <div class="preview-content" id="reportPreview">
+              <div class="preview-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <path d="M14 2v6h6"/>
+                  <path d="M16 13H8"/>
+                  <path d="M16 17H8"/>
+                  <path d="M10 9H8"/>
+                </svg>
+                <p>Select options and click "Generate Report" to preview</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Settings Page -->
+      <!-- Settings Page - Tabbed Layout -->
       <div id="settingsPage" class="page">
         <div class="page-header">
           <h1 class="page-title">Settings</h1>
         </div>
         
-        <!-- Profile Section -->
-        <div class="settings-section">
-          <h3 class="settings-section-title">Profile</h3>
-          <div class="form-group">
-            <label>Company Name</label>
-            <input type="text" id="settingsCompanyName">
-          </div>
-          <div class="form-group">
-            <label>Contact Email</label>
-            <input type="email" id="settingsContactEmail">
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" id="settingsPhone">
-          </div>
-          <button class="btn btn-primary" onclick="saveProfile()">Save Changes</button>
+        <div class="settings-tabs">
+          <button class="settings-tab active" data-tab="profile">Profile</button>
+          <button class="settings-tab" data-tab="notifications">Notifications</button>
+          <button class="settings-tab" data-tab="team">Team Members</button>
+          <button class="settings-tab" data-tab="api">API Access</button>
+          <button class="settings-tab" data-tab="whitelabel">White-Label</button>
         </div>
         
-        <!-- Notifications Section -->
-        <div class="settings-section">
-          <h3 class="settings-section-title">Notifications</h3>
-          <div class="settings-row">
-            <div>
-              <div class="settings-label">Email Alerts</div>
-              <div class="settings-description">Receive notifications for important events</div>
+        <!-- Profile Panel -->
+        <div class="settings-panel active" id="profilePanel">
+          <div class="settings-section">
+            <div class="form-group">
+              <label>Company Name</label>
+              <input type="text" id="settingsCompanyName">
             </div>
-            <label class="toggle">
-              <input type="checkbox" id="notifEmailAlerts">
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-          <div class="settings-row">
-            <div>
-              <div class="settings-label">Weekly Summary Reports</div>
-              <div class="settings-description">Get automated weekly performance digest</div>
+            <div class="form-group">
+              <label>Logo</label>
+              <input type="file" id="settingsLogo" accept="image/*" style="padding: 8px;">
             </div>
-            <label class="toggle">
-              <input type="checkbox" id="notifWeeklySummary">
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-          <div class="settings-row">
-            <div>
-              <div class="settings-label">Campaign Alerts</div>
-              <div class="settings-description">Notify on campaign issues or anomalies</div>
+            <div class="form-group">
+              <label>Contact Email</label>
+              <input type="email" id="settingsContactEmail">
             </div>
-            <label class="toggle">
-              <input type="checkbox" id="notifCampaignAlerts">
-              <span class="toggle-slider"></span>
-            </label>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="settingsPhone">
+            </div>
+            <button class="btn btn-primary" onclick="saveProfile()">Save Changes</button>
           </div>
         </div>
         
-        <!-- Team Section -->
-        <div class="settings-section">
-          <h3 class="settings-section-title">Team Members</h3>
-          <div class="team-list" id="teamList">
-            <!-- Populated by JS -->
-          </div>
-          <button class="btn btn-secondary" style="margin-top: 16px;" onclick="openInviteModal()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="8.5" cy="7" r="4"/>
-              <line x1="20" y1="8" x2="20" y2="14"/>
-              <line x1="23" y1="11" x2="17" y2="11"/>
-            </svg>
-            Invite User
-          </button>
-        </div>
-        
-        <!-- API Section -->
-        <div class="settings-section">
-          <h3 class="settings-section-title">API Access</h3>
-          <div class="form-group">
-            <label>API Key</label>
-            <div class="api-key-display">
-              <span class="api-key-text" id="apiKeyDisplay">pk_live_••••••••••••••••</span>
-              <button class="btn-icon" onclick="copyApiKey()" title="Copy">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                </svg>
-              </button>
+        <!-- Notifications Panel -->
+        <div class="settings-panel" id="notificationsPanel">
+          <div class="settings-section">
+            <div class="settings-row">
+              <div>
+                <div class="settings-label">Email Alerts</div>
+                <div class="settings-description">Receive notifications for important events</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="notifEmailAlerts">
+                <span class="toggle-slider"></span>
+              </label>
             </div>
-            <button class="btn btn-secondary" style="margin-top: 12px;" onclick="regenerateApiKey()">Regenerate Key</button>
-          </div>
-          <div class="form-group" style="margin-top: 20px;">
-            <label>Webhook URL</label>
-            <input type="url" id="webhookUrl" placeholder="https://your-server.com/webhook">
-            <button class="btn btn-primary" style="margin-top: 12px;" onclick="saveWebhook()">Save Webhook</button>
+            <div class="settings-row">
+              <div>
+                <div class="settings-label">Weekly Summary Reports</div>
+                <div class="settings-description">Get automated weekly performance digest</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="notifWeeklySummary">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="settings-row">
+              <div>
+                <div class="settings-label">Campaign Alerts</div>
+                <div class="settings-description">Notify on campaign issues or anomalies</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="notifCampaignAlerts">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
           </div>
         </div>
         
-        <!-- White-label Section -->
-        <div class="settings-section">
-          <h3 class="settings-section-title">White-Label</h3>
-          <div class="form-group">
-            <label>Custom Logo URL</label>
-            <input type="url" id="customLogoUrl" placeholder="https://your-site.com/logo.png">
+        <!-- Team Panel -->
+        <div class="settings-panel" id="teamPanel">
+          <div class="settings-section">
+            <table class="team-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="teamTableBody"></tbody>
+            </table>
+            <button class="btn btn-primary" style="margin-top: 20px;" onclick="openInviteModal()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <line x1="20" y1="8" x2="20" y2="14"/>
+                <line x1="23" y1="11" x2="17" y2="11"/>
+              </svg>
+              Invite User
+            </button>
           </div>
-          <div class="form-group">
-            <label>Primary Brand Color</label>
-            <div class="color-picker-row">
-              <div class="color-preview" id="colorPreview" style="background: #7C50F9;"></div>
-              <input type="color" id="primaryColor" value="#7C50F9" onchange="updateColorPreview()">
+        </div>
+        
+        <!-- API Panel -->
+        <div class="settings-panel" id="apiPanel">
+          <div class="settings-section">
+            <div class="form-group">
+              <label>API Key</label>
+              <div class="api-key-display">
+                <span class="api-key-text" id="apiKeyDisplay">pk_live_••••••••••••••••</span>
+                <button class="btn-icon" onclick="copyApiKey()" title="Copy">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                </button>
+              </div>
+              <button class="btn btn-secondary" style="margin-top: 12px;" onclick="regenerateApiKey()">Regenerate Key</button>
+            </div>
+            <div class="form-group" style="margin-top: 24px;">
+              <label>Webhook URL</label>
+              <input type="url" id="webhookUrl" placeholder="https://your-server.com/webhook">
+              <div class="settings-description" style="margin-top: 4px;">Receive real-time events when campaigns are sent or replies come in</div>
+              <button class="btn btn-primary" style="margin-top: 12px;" onclick="saveWebhook()">Save Webhook</button>
             </div>
           </div>
-          <button class="btn btn-primary" onclick="saveWhiteLabel()">Save Branding</button>
+        </div>
+        
+        <!-- White-Label Panel -->
+        <div class="settings-panel" id="whitelabelPanel">
+          <div class="settings-section">
+            <div class="form-group">
+              <label>Custom Logo for Reports</label>
+              <input type="file" id="customLogo" accept="image/*" style="padding: 8px;">
+              <div class="settings-description" style="margin-top: 4px;">This logo will appear on generated reports</div>
+            </div>
+            <div class="form-group" style="margin-top: 24px;">
+              <label>Primary Brand Color</label>
+              <div class="color-picker-row">
+                <div class="color-preview" id="colorPreview" style="background: #7C50F9;"></div>
+                <input type="color" id="primaryColor" value="#7C50F9" onchange="updateColorPreview()">
+                <span style="color: var(--text-muted); font-size: 14px;" id="colorHex">#7C50F9</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="margin-top: 24px;" onclick="saveWhiteLabel()">Save Branding</button>
+          </div>
         </div>
       </div>
     </main>
@@ -1366,6 +1339,7 @@
     let performanceChart = null;
     let detailChart = null;
     let fullApiKey = null;
+    let currentReportId = null;
 
     // API Helper
     async function api(endpoint, options = {}) {
@@ -1373,12 +1347,8 @@
         'Content-Type': 'application/json',
         ...(token ? { 'Authorization': `Bearer ${token}` } : {})
       };
-      
       const res = await fetch(endpoint, { ...options, headers });
-      if (res.status === 401) {
-        logout();
-        throw new Error('Unauthorized');
-      }
+      if (res.status === 401) { logout(); throw new Error('Unauthorized'); }
       return res.json();
     }
 
@@ -1387,18 +1357,15 @@
       e.preventDefault();
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      
       try {
         const data = await api('/api/auth/login', {
           method: 'POST',
           body: JSON.stringify({ email, password })
         });
-        
         token = data.token;
         partner = data.partner;
         localStorage.setItem('partnerToken', token);
         localStorage.setItem('partnerData', JSON.stringify(partner));
-        
         showApp();
       } catch (err) {
         document.getElementById('loginError').textContent = 'Invalid email or password';
@@ -1419,35 +1386,31 @@
 
     // Navigation
     document.querySelectorAll('.nav-item[data-page]').forEach(item => {
-      item.addEventListener('click', () => {
-        const page = item.dataset.page;
-        showPage(page);
-      });
+      item.addEventListener('click', () => showPage(item.dataset.page));
     });
 
     function showPage(page) {
       document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
       document.querySelector(`.nav-item[data-page="${page}"]`)?.classList.add('active');
-      
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById(`${page}Page`)?.classList.add('active');
       
-      // Load page data
       switch (page) {
-        case 'dashboard':
-          loadDashboard();
-          break;
-        case 'sub-accounts':
-          loadSubAccounts();
-          break;
-        case 'reports':
-          loadReportsPage();
-          break;
-        case 'settings':
-          loadSettings();
-          break;
+        case 'dashboard': loadDashboard(); break;
+        case 'reports': loadReportsPage(); break;
+        case 'settings': loadSettings(); break;
       }
     }
+
+    // Settings Tabs
+    document.querySelectorAll('.settings-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.settings-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.settings-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(`${tab.dataset.tab}Panel`).classList.add('active');
+      });
+    });
 
     // Dashboard
     async function loadDashboard() {
@@ -1468,85 +1431,34 @@
           data: {
             labels: data.chartData.map(d => formatDate(d.date)),
             datasets: [
-              {
-                label: 'Sent',
-                data: data.chartData.map(d => d.sent),
-                borderColor: '#7C50F9',
-                backgroundColor: 'rgba(124, 80, 249, 0.1)',
-                fill: true,
-                tension: 0.4
-              },
-              {
-                label: 'Opens',
-                data: data.chartData.map(d => d.opens),
-                borderColor: '#10B981',
-                backgroundColor: 'transparent',
-                tension: 0.4
-              },
-              {
-                label: 'Replies',
-                data: data.chartData.map(d => d.replies),
-                borderColor: '#F59E0B',
-                backgroundColor: 'transparent',
-                tension: 0.4
-              }
+              { label: 'Sent', data: data.chartData.map(d => d.sent), borderColor: '#7C50F9', backgroundColor: 'rgba(124, 80, 249, 0.1)', fill: true, tension: 0.4 },
+              { label: 'Opens', data: data.chartData.map(d => d.opens), borderColor: '#10B981', backgroundColor: 'transparent', tension: 0.4 },
+              { label: 'Replies', data: data.chartData.map(d => d.replies), borderColor: '#F59E0B', backgroundColor: 'transparent', tension: 0.4 }
             ]
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                position: 'top',
-                labels: { color: '#A0A0B0' }
-              }
-            },
+            plugins: { legend: { position: 'top', labels: { color: '#A0A0B0' } } },
             scales: {
-              x: {
-                ticks: { color: '#6B6B7B' },
-                grid: { color: '#2A2A3A' }
-              },
-              y: {
-                ticks: { color: '#6B6B7B' },
-                grid: { color: '#2A2A3A' }
-              }
+              x: { ticks: { color: '#6B6B7B' }, grid: { color: '#2A2A3A' } },
+              y: { ticks: { color: '#6B6B7B' }, grid: { color: '#2A2A3A' } }
             }
           }
         });
         
-        // Activity
-        const activityHtml = data.recentActivity.map(a => `
-          <li class="activity-item">
-            <div class="activity-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                ${a.type === 'campaign_sent' ? '<path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/>' : 
-                  a.type === 'reply_received' ? '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>' :
-                  '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>'}
-              </svg>
-            </div>
-            <div class="activity-content">
-              <div class="activity-text"><strong>${a.subAccount}</strong> - ${a.details}</div>
-              <div class="activity-time">${formatTimeAgo(a.timestamp)}</div>
-            </div>
-          </li>
-        `).join('');
-        document.getElementById('activityList').innerHTML = activityHtml;
-        
+        // Load sub-accounts
+        loadSubAccounts();
       } catch (err) {
         console.error('Dashboard error:', err);
       }
     }
 
-    // Sub-accounts
     async function loadSubAccounts() {
-      const status = document.getElementById('statusFilter').value;
-      const search = document.getElementById('searchFilter').value;
-      
       try {
-        const data = await api(`/api/sub-accounts?status=${status}&search=${encodeURIComponent(search)}`);
-        
+        const data = await api('/api/sub-accounts?status=all');
         const html = data.subAccounts.map(s => `
-          <div class="sub-account-card">
+          <div class="sub-account-card" onclick="viewSubAccount('${s.id}')">
             <div class="sub-account-header">
               <div class="sub-account-name">${s.companyName}</div>
               <span class="status-badge ${s.status}">${s.status}</span>
@@ -1565,11 +1477,9 @@
                 <div class="sub-stat-label">Reply Rate</div>
               </div>
             </div>
-            <button class="btn btn-secondary btn-full" onclick="viewSubAccount('${s.id}')">View Details</button>
           </div>
         `).join('');
-        
-        document.getElementById('subAccountsGrid').innerHTML = html || '<p style="color: var(--text-muted);">No sub-accounts found.</p>';
+        document.getElementById('subAccountsGrid').innerHTML = html || '<p style="color: var(--text-muted);">No sub-accounts yet.</p>';
       } catch (err) {
         console.error('Sub-accounts error:', err);
       }
@@ -1577,20 +1487,17 @@
 
     async function viewSubAccount(id) {
       currentSubAccountId = id;
-      
       try {
         const data = await api(`/api/sub-accounts/${id}`);
         
         document.getElementById('detailClientName').textContent = data.companyName;
         document.getElementById('detailStatus').textContent = data.status;
         document.getElementById('detailStatus').className = `status-badge ${data.status}`;
-        
         document.getElementById('detailEmailsSent').textContent = formatNumber(data.stats.emailsSent);
         document.getElementById('detailOpenRate').textContent = data.stats.openRate + '%';
         document.getElementById('detailReplyRate').textContent = data.stats.replyRate + '%';
         document.getElementById('detailBounceRate').textContent = data.stats.bounceRate + '%';
         
-        // Chart
         const ctx = document.getElementById('detailChart').getContext('2d');
         if (detailChart) detailChart.destroy();
         
@@ -1599,51 +1506,22 @@
           data: {
             labels: data.chartData.map(d => formatDate(d.date)),
             datasets: [
-              {
-                label: 'Sent',
-                data: data.chartData.map(d => d.sent),
-                borderColor: '#7C50F9',
-                backgroundColor: 'rgba(124, 80, 249, 0.1)',
-                fill: true,
-                tension: 0.4
-              },
-              {
-                label: 'Opens',
-                data: data.chartData.map(d => d.opens),
-                borderColor: '#10B981',
-                tension: 0.4
-              },
-              {
-                label: 'Replies',
-                data: data.chartData.map(d => d.replies),
-                borderColor: '#F59E0B',
-                tension: 0.4
-              }
+              { label: 'Sent', data: data.chartData.map(d => d.sent), borderColor: '#7C50F9', backgroundColor: 'rgba(124, 80, 249, 0.1)', fill: true, tension: 0.4 },
+              { label: 'Opens', data: data.chartData.map(d => d.opens), borderColor: '#10B981', tension: 0.4 },
+              { label: 'Replies', data: data.chartData.map(d => d.replies), borderColor: '#F59E0B', tension: 0.4 }
             ]
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                position: 'top',
-                labels: { color: '#A0A0B0' }
-              }
-            },
+            plugins: { legend: { position: 'top', labels: { color: '#A0A0B0' } } },
             scales: {
-              x: {
-                ticks: { color: '#6B6B7B', maxTicksLimit: 10 },
-                grid: { color: '#2A2A3A' }
-              },
-              y: {
-                ticks: { color: '#6B6B7B' },
-                grid: { color: '#2A2A3A' }
-              }
+              x: { ticks: { color: '#6B6B7B', maxTicksLimit: 10 }, grid: { color: '#2A2A3A' } },
+              y: { ticks: { color: '#6B6B7B' }, grid: { color: '#2A2A3A' } }
             }
           }
         });
         
-        // Campaigns table
         const campaignsHtml = data.campaigns.map(c => `
           <tr>
             <td>${c.name}</td>
@@ -1656,64 +1534,48 @@
         `).join('');
         document.getElementById('campaignsTable').innerHTML = campaignsHtml || '<tr><td colspan="6" style="text-align: center; color: var(--text-muted);">No campaigns yet</td></tr>';
         
-        // Show detail page
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById('subAccountDetailPage').classList.add('active');
-        
       } catch (err) {
         console.error('Sub-account detail error:', err);
       }
     }
 
     function exportSubAccountData() {
-      if (!currentSubAccountId) return;
-      window.open(`/api/reports/export?subAccountId=${currentSubAccountId}`, '_blank');
+      if (currentSubAccountId) window.open(`/api/reports/export?subAccountId=${currentSubAccountId}`, '_blank');
     }
 
-    function openAddClientModal() {
-      document.getElementById('addClientModal').classList.add('active');
-    }
+    function openAddClientModal() { document.getElementById('addClientModal').classList.add('active'); }
 
     async function addClient(e) {
       e.preventDefault();
       const name = document.getElementById('newClientName').value;
-      
       try {
-        await api('/api/sub-accounts', {
-          method: 'POST',
-          body: JSON.stringify({ companyName: name })
-        });
+        await api('/api/sub-accounts', { method: 'POST', body: JSON.stringify({ companyName: name }) });
         closeModal('addClientModal');
         document.getElementById('newClientName').value = '';
         loadSubAccounts();
-      } catch (err) {
-        console.error('Add client error:', err);
-      }
+      } catch (err) { console.error('Add client error:', err); }
     }
 
     // Reports
     async function loadReportsPage() {
-      // Set default dates
       const today = new Date();
       const monthAgo = new Date(today);
       monthAgo.setMonth(monthAgo.getMonth() - 1);
-      
       document.getElementById('reportFrom').value = monthAgo.toISOString().split('T')[0];
       document.getElementById('reportTo').value = today.toISOString().split('T')[0];
       
-      // Load sub-accounts for selection
       try {
         const data = await api('/api/sub-accounts?status=all');
         const html = data.subAccounts.map(s => `
-          <label class="checkbox-item" onclick="this.classList.toggle('selected')">
-            <input type="checkbox" value="${s.id}">
+          <label class="checkbox-item">
+            <input type="checkbox" value="${s.id}" checked>
             ${s.companyName}
           </label>
         `).join('');
         document.getElementById('reportSubAccounts').innerHTML = html;
-      } catch (err) {
-        console.error('Load reports error:', err);
-      }
+      } catch (err) { console.error('Load reports error:', err); }
     }
 
     async function generateReport() {
@@ -1723,72 +1585,93 @@
       const checkboxes = document.querySelectorAll('#reportSubAccounts input:checked');
       const subAccountIds = Array.from(checkboxes).map(cb => cb.value);
       
+      document.getElementById('reportPreview').innerHTML = '<div class="preview-placeholder"><p>Generating report...</p></div>';
+      
       try {
         const result = await api('/api/reports/generate', {
           method: 'POST',
-          body: JSON.stringify({
-            reportType,
-            dateRange: { from: dateFrom, to: dateTo },
-            subAccountIds,
-            format: 'pdf'
-          })
+          body: JSON.stringify({ reportType, dateRange: { from: dateFrom, to: dateTo }, subAccountIds, format: 'pdf' })
         });
+        currentReportId = result.reportId;
         
-        // Poll for completion
-        alert('Report is being generated. You will be notified when ready.');
+        // Simulate report generation
+        setTimeout(() => {
+          document.getElementById('reportPreview').innerHTML = `
+            <div style="padding: 24px; text-align: left; width: 100%;">
+              <h3 style="margin-bottom: 16px;">${reportType.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}</h3>
+              <p style="color: var(--text-muted); margin-bottom: 24px;">Date Range: ${dateFrom} to ${dateTo}</p>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;">
+                <div style="background: var(--bg-primary); padding: 16px; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 24px; font-weight: 600;">15,394</div>
+                  <div style="font-size: 12px; color: var(--text-muted);">Emails Sent</div>
+                </div>
+                <div style="background: var(--bg-primary); padding: 16px; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 24px; font-weight: 600; color: var(--purple-light);">52.2%</div>
+                  <div style="font-size: 12px; color: var(--text-muted);">Open Rate</div>
+                </div>
+                <div style="background: var(--bg-primary); padding: 16px; border-radius: 8px; text-align: center;">
+                  <div style="font-size: 24px; font-weight: 600; color: var(--success);">9.1%</div>
+                  <div style="font-size: 12px; color: var(--text-muted);">Reply Rate</div>
+                </div>
+              </div>
+              <p style="color: var(--text-muted); font-size: 14px;">Report ready for download. Select format above.</p>
+            </div>
+          `;
+          document.getElementById('downloadOptions').style.display = 'flex';
+        }, 1500);
       } catch (err) {
         console.error('Generate report error:', err);
+        document.getElementById('reportPreview').innerHTML = '<div class="preview-placeholder"><p>Error generating report</p></div>';
       }
     }
 
-    function scheduleReport() {
-      alert('Report scheduling coming soon!');
+    function downloadReport(format) {
+      if (currentReportId) {
+        window.open(`/api/reports/${currentReportId}/download?format=${format}`, '_blank');
+      }
     }
+
+    function scheduleReport() { alert('Report scheduling coming soon!'); }
 
     // Settings
     async function loadSettings() {
       try {
         const data = await api('/api/settings');
         
-        // Profile
         document.getElementById('settingsCompanyName').value = data.profile.companyName || '';
         document.getElementById('settingsContactEmail').value = data.profile.contactEmail || '';
         document.getElementById('settingsPhone').value = data.profile.phone || '';
         
-        // Notifications
         document.getElementById('notifEmailAlerts').checked = data.notifications.emailAlerts;
         document.getElementById('notifWeeklySummary').checked = data.notifications.weeklySummary;
         document.getElementById('notifCampaignAlerts').checked = data.notifications.campaignAlerts;
         
-        // Team
         const teamHtml = data.teamMembers.map(m => `
-          <div class="team-member">
-            <div class="team-member-info">
-              <div class="team-member-avatar">${m.name.charAt(0).toUpperCase()}</div>
-              <div>
-                <div class="team-member-name">${m.name}</div>
-                <div class="team-member-email">${m.email}</div>
+          <tr>
+            <td>
+              <div class="team-member-cell">
+                <div class="team-avatar">${m.name.charAt(0).toUpperCase()}</div>
+                ${m.name}
               </div>
-            </div>
-            <span class="role-badge">${m.role}</span>
-          </div>
+            </td>
+            <td>${m.email}</td>
+            <td><span class="role-badge">${m.role}</span></td>
+            <td>
+              <button class="action-btn" title="Edit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+              <button class="action-btn danger" title="Remove" onclick="removeTeamMember('${m.id}')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+            </td>
+          </tr>
         `).join('');
-        document.getElementById('teamList').innerHTML = teamHtml;
+        document.getElementById('teamTableBody').innerHTML = teamHtml;
         
-        // API
         fullApiKey = data.api.apiKey;
-        document.getElementById('apiKeyDisplay').textContent = data.api.apiKey ? 
-          data.api.apiKey.substring(0, 12) + '••••••••••••' : 'No API key';
+        document.getElementById('apiKeyDisplay').textContent = data.api.apiKey ? data.api.apiKey.substring(0, 12) + '••••••••••••' : 'No API key';
         document.getElementById('webhookUrl').value = data.api.webhookUrl || '';
         
-        // White-label
-        document.getElementById('customLogoUrl').value = data.whiteLabel.customLogoUrl || '';
         document.getElementById('primaryColor').value = data.whiteLabel.primaryColor || '#7C50F9';
         document.getElementById('colorPreview').style.background = data.whiteLabel.primaryColor || '#7C50F9';
-        
-      } catch (err) {
-        console.error('Load settings error:', err);
-      }
+        document.getElementById('colorHex').textContent = data.whiteLabel.primaryColor || '#7C50F9';
+      } catch (err) { console.error('Load settings error:', err); }
     }
 
     async function saveProfile() {
@@ -1804,146 +1687,96 @@
           })
         });
         alert('Profile saved!');
-      } catch (err) {
-        console.error('Save profile error:', err);
-      }
+      } catch (err) { console.error('Save profile error:', err); }
     }
 
-    // Auto-save notifications
     ['notifEmailAlerts', 'notifWeeklySummary', 'notifCampaignAlerts'].forEach(id => {
       document.getElementById(id).addEventListener('change', async (e) => {
-        const key = id.replace('notif', '').replace(/([A-Z])/g, (m) => m.toLowerCase());
-        const notifKey = id === 'notifEmailAlerts' ? 'emailAlerts' : 
-                         id === 'notifWeeklySummary' ? 'weeklySummary' : 'campaignAlerts';
+        const notifKey = id === 'notifEmailAlerts' ? 'emailAlerts' : id === 'notifWeeklySummary' ? 'weeklySummary' : 'campaignAlerts';
         try {
-          await api('/api/settings', {
-            method: 'PATCH',
-            body: JSON.stringify({ notifications: { [notifKey]: e.target.checked } })
-          });
-        } catch (err) {
-          console.error('Save notification error:', err);
-        }
+          await api('/api/settings', { method: 'PATCH', body: JSON.stringify({ notifications: { [notifKey]: e.target.checked } }) });
+        } catch (err) { console.error('Save notification error:', err); }
       });
     });
 
-    function openInviteModal() {
-      document.getElementById('inviteModal').classList.add('active');
-    }
+    function openInviteModal() { document.getElementById('inviteModal').classList.add('active'); }
 
     async function inviteUser(e) {
       e.preventDefault();
-      const email = document.getElementById('inviteEmail').value;
-      const role = document.getElementById('inviteRole').value;
-      
       try {
         await api('/api/settings/team/invite', {
           method: 'POST',
-          body: JSON.stringify({ email, role })
+          body: JSON.stringify({ email: document.getElementById('inviteEmail').value, role: document.getElementById('inviteRole').value })
         });
         closeModal('inviteModal');
         document.getElementById('inviteEmail').value = '';
         loadSettings();
-      } catch (err) {
-        console.error('Invite user error:', err);
-      }
+      } catch (err) { console.error('Invite user error:', err); }
+    }
+
+    async function removeTeamMember(userId) {
+      if (!confirm('Remove this team member?')) return;
+      try {
+        await api(`/api/settings/team/${userId}`, { method: 'DELETE' });
+        loadSettings();
+      } catch (err) { console.error('Remove team member error:', err); }
     }
 
     function copyApiKey() {
-      if (fullApiKey) {
-        navigator.clipboard.writeText(fullApiKey);
-        alert('API key copied!');
-      }
+      if (fullApiKey) { navigator.clipboard.writeText(fullApiKey); alert('API key copied!'); }
     }
 
     async function regenerateApiKey() {
       if (!confirm('Are you sure? Your current API key will be invalidated.')) return;
-      
       try {
         const result = await api('/api/settings/api/regenerate', { method: 'POST' });
         fullApiKey = result.apiKey;
         document.getElementById('apiKeyDisplay').textContent = result.apiKey.substring(0, 12) + '••••••••••••';
         alert('New API key generated!');
-      } catch (err) {
-        console.error('Regenerate key error:', err);
-      }
+      } catch (err) { console.error('Regenerate key error:', err); }
     }
 
     async function saveWebhook() {
       try {
-        await api('/api/settings/api/webhook', {
-          method: 'PATCH',
-          body: JSON.stringify({ webhookUrl: document.getElementById('webhookUrl').value })
-        });
+        await api('/api/settings/api/webhook', { method: 'PATCH', body: JSON.stringify({ webhookUrl: document.getElementById('webhookUrl').value }) });
         alert('Webhook saved!');
-      } catch (err) {
-        console.error('Save webhook error:', err);
-      }
+      } catch (err) { console.error('Save webhook error:', err); }
     }
 
     function updateColorPreview() {
-      document.getElementById('colorPreview').style.background = document.getElementById('primaryColor').value;
+      const color = document.getElementById('primaryColor').value;
+      document.getElementById('colorPreview').style.background = color;
+      document.getElementById('colorHex').textContent = color;
     }
 
     async function saveWhiteLabel() {
       try {
         await api('/api/settings', {
           method: 'PATCH',
-          body: JSON.stringify({
-            whiteLabel: {
-              customLogoUrl: document.getElementById('customLogoUrl').value,
-              primaryColor: document.getElementById('primaryColor').value
-            }
-          })
+          body: JSON.stringify({ whiteLabel: { primaryColor: document.getElementById('primaryColor').value } })
         });
         alert('Branding saved!');
-      } catch (err) {
-        console.error('Save white-label error:', err);
-      }
+      } catch (err) { console.error('Save white-label error:', err); }
     }
 
-    // Modal helpers
-    function closeModal(id) {
-      document.getElementById(id).classList.remove('active');
-    }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
     // Utilities
-    function formatNumber(n) {
-      if (n === null || n === undefined) return '-';
-      return n.toLocaleString();
-    }
-
-    function formatDate(dateStr) {
-      const d = new Date(dateStr);
-      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-    }
-
-    function formatTimeAgo(timestamp) {
-      const diff = Date.now() - new Date(timestamp).getTime();
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      if (hours < 1) return 'Just now';
-      if (hours < 24) return `${hours}h ago`;
-      const days = Math.floor(hours / 24);
-      return `${days}d ago`;
-    }
+    function formatNumber(n) { return n === null || n === undefined ? '-' : n.toLocaleString(); }
+    function formatDate(dateStr) { return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); }
 
     // Initialize
     function showApp() {
       document.getElementById('loginPage').style.display = 'none';
       document.getElementById('appContainer').style.display = 'block';
-      
-      // Update user info
       document.getElementById('dashboardWelcome').textContent = partner?.name || 'Partner';
       document.getElementById('userName').textContent = partner?.name || 'Partner';
       document.getElementById('userEmail').textContent = partner?.email || '';
       document.getElementById('userAvatar').textContent = (partner?.name || 'P').charAt(0).toUpperCase();
-      
       loadDashboard();
     }
 
-    // Check auth on load
-    if (token && partner) {
-      showApp();
-    }
+    if (token && partner) showApp();
   </script>
 </body>
 </html>
